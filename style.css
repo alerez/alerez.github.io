@@ -151,6 +151,7 @@ header{
   font-family: 'Cabin', sans-serif;
   font-size: 10px;
   padding-top: 15px;
+  display: flex;
 }
 #button{
   text-align: center;
@@ -174,8 +175,9 @@ header{
     margin-left: 10%;
   }
   #button{
-    margin-left: 50%;
+    margin-left: 40%;
   }
+
   header{
     width: 100%;
     margin: 0;
