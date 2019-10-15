@@ -203,6 +203,8 @@ header{
 #textFotter3{
   font-family: 'Cabin', sans-serif;
   font-size: 10px;
+  padding-top: 12px;
+  display: flex;
 }
 #button{
 	position: relative;
