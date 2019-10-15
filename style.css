@@ -182,6 +182,9 @@ header{
     width: 100%;
     margin: 0;
   }
+  .menu__btn{
+    position: fixed;
+  }
   .menu__box {
     display: block;
     position: fixed;
