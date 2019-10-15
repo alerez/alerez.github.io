@@ -148,9 +148,9 @@ header{
 	font-size: 12px;
   color: #A9A9A9;
 }
-#textFotter3{
+#textFotter3>p{
   font-family: 'Cabin', sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   padding-top: 15px;
   display: flex;
 }
@@ -167,12 +167,19 @@ header{
 #button:hover{
   background-color: rgb(199, 206, 209);
 }
+
 @media (max-width: 1000px){
   #textFooter2>p{
     width: 200px;
   }
   #button{
     margin-left: 10%;
+  }
+  #text>span>p{
+    text-align: 14px;
+  }
+  #textFotter3>p{
+    font-size: 12px;
   }
 }
 @media (max-width: 900px){
