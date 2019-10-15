@@ -98,7 +98,7 @@ header{
 }
 .menu__box{
   display: none;
-  position: fixed;
+      position: fixed;
 }
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 #text{
@@ -173,10 +173,14 @@ header{
     display: none;
   }
   #Footer{
-    margin-left: 10%;
+    margin-left: 5%;
   }
   #button{
-    margin-left: 35%;
+    margin-left: 10%;
+    margin-top: -5%;
+  }
+  #textFooter2>p{
+    width: 200px;
   }
 
   header{
