@@ -99,59 +99,6 @@ header{
 .menu__box{
 	display: none;
 }
-@media (max-width: 600px) {
-.menu{
-	display: none;
-}
-header{
-	width: 100%;
-	margin: 0;
-}
-#textFooter1{
-  margin-left: 5vw;
-}
-
-
-.menu__box {
-  display: block;
-  position: fixed;
-  visibility: hidden;
-  top: 0;
-  left: -100%;
-
-  width: 200px;
-  height: 100%;
-
-  margin: 0;
-  padding: 80px 0;
-
-  list-style: none;
-
-  background-color: #ECEFF1;
-  box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-
-  transition-duration: .25s;
-  z-index: 1;
-}
-
-.menu__item {
-  display: block;
-  padding: 12px 24px;
-
-  color: #333;
-
-  	font-family: 'Maven Pro', sans-serif;
-	font-size: 20px;
-	font-weight: 600;
-
-  text-decoration: none;
-
-  transition-duration: .25s;
-}
-.menu__item:hover {
-  background-color: #CFD8DC;
-} 
-}
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 #text{
   font-family: 'Cabin', sans-serif;
@@ -183,13 +130,13 @@ header{
   flex-wrap: wrap;
   margin-top: 5%;
   margin-bottom: 10%;
+  margin-left: 30%;
 }
 #textFooter1{
   font-family: 'Cabin', sans-serif;
   text-align: end;
-  margin-left: 30vw;
   padding-right: 2%;
-
+  width: 200px;
 }
 #fotterFlex{
   display: flex;
@@ -203,21 +150,73 @@ header{
 #textFotter3{
   font-family: 'Cabin', sans-serif;
   font-size: 10px;
-  padding-top: 12px;
-  display: flex;
+  padding-top: 15px;
 }
 #button{
-	position: relative;
   text-align: center;
-  font-size: 15px;
+  font-size: 14px;
   outline: none;
-  width: 140px;
+  width: 150px;
   height: 48px;
   margin-left: 75%;
-  display: block;
   background-color: #fff;
   border: 0.5px solid #A9A9A9;
 }
 #button:hover{
   background-color: rgb(199, 206, 209);
 }
+
+@media (max-width: 600px){
+  .menu{
+    display: none;
+  }
+  #Footer{
+    margin-left: 10%;
+  }
+  #button{
+    margin-left: 50%;
+  }
+  header{
+    width: 100%;
+    margin: 0;
+  }
+  .menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+  
+    width: 200px;
+    height: 100%;
+  
+    margin: 0;
+    padding: 80px 0;
+  
+    list-style: none;
+  
+    background-color: #ECEFF1;
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  
+    transition-duration: .25s;
+    z-index: 1;
+  }
+  
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+  
+    color: #333;
+  
+      font-family: 'Maven Pro', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+  
+    text-decoration: none;
+  
+    transition-duration: .25s;
+  }
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  } 
+  }
