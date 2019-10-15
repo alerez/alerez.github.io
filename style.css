@@ -185,6 +185,9 @@ header{
   .menu__btn{
     position: fixed;
   }
+  #menu__toggle{
+    position: fixed;
+  }
   .menu__box {
     display: block;
     position: fixed;
