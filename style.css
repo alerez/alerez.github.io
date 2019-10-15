@@ -107,6 +107,11 @@ header{
 	width: 100%;
 	margin: 0;
 }
+#textFooter1{
+  margin-left: 5vw;
+}
+
+
 .menu__box {
   display: block;
   position: fixed;
@@ -173,32 +178,31 @@ header{
   position: relative;
   display: block;
 }
-footer{
+#Footer{
   display: flex;
-	flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 5%;
   margin-bottom: 10%;
 }
 #textFooter1{
   font-family: 'Cabin', sans-serif;
   text-align: end;
-  position: relative;
-  margin-left: 30%;
+  margin-left: 30vw;
+  padding-right: 2%;
+
+}
+#fotterFlex{
+  display: flex;
+  flex-direction: column;
 }
 #textFooter2{
   font-family: 'Cabin', sans-serif;
-  position: relative;
-	margin-left: 50%;
-	margin-left: 45%;
 	font-size: 12px;
-	color: #A9A9A9;
+  color: #A9A9A9;
 }
 #textFotter3{
   font-family: 'Cabin', sans-serif;
-  font-size: 12px;
-  margin-top: 3%;
-  margin-left: 45%;
-  position: relative;
+  font-size: 10px;
 }
 #button{
 	position: relative;
@@ -207,7 +211,7 @@ footer{
   outline: none;
   width: 140px;
   height: 48px;
-  margin-left: 80%;
+  margin-left: 75%;
   display: block;
   background-color: #fff;
   border: 0.5px solid #A9A9A9;
