@@ -167,7 +167,23 @@ header{
 #button:hover{
   background-color: rgb(199, 206, 209);
 }
-
+@media (max-width: 1000px){
+  #textFooter2>p{
+    width: 200px;
+  }
+  #button{
+    margin-left: 10%;
+  }
+}
+@media (max-width: 900px){
+  #textFooter2>p{
+    width: 200px;
+  }
+  #button{
+    margin-left: 10%;
+    margin-top: -5%;
+  }
+}
 @media (max-width: 600px){
   .menu{
     display: none;
@@ -232,4 +248,24 @@ header{
   .menu__item:hover {
     background-color: #CFD8DC;
   } 
+  }
+  @media (max-width: 425px){
+    #button{
+      margin-left: 10%;
+    } 
+     #textFooter2>p{
+      width: 200px;
+    }
+    #Footer{
+      margin-left: 20%;
+    }
+  }
+  @media (max-width: 414px){
+    #button{
+      margin-left: 10%;
+      margin-top: 5%;
+    } 
+     #textFooter2>p{
+      width: 200px;
+    }
   }
