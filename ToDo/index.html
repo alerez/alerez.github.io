@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <section class="todoapp">
+        <header class="header">
+            <h1 style="display: flex; font-size: 70px; margin: 0 auto; padding-left: 15px;">ToDo_List<span style="color: limegreen"> / </span>Ш++</h1>
+            <label>
+                <input class="new_todo"
+                       autofocus autocomplete="off"
+                       placeholder="Тут можно что-то написать)))"
+                       type="text"
+                       v-model="new_task.text">
+                <span><button @click="add_task()" class="button new_todo_button">ДОБАВИТЬ</button></span>
+            </label>
+        </header>
+        <main>
+            <div class="status">
+                <h3 class="status_title">"Активные задачи:"</h3>
+                <task @task_none="del(index)"
+                      :data="data"
+                      v-for="(data, index) in items"
+                      :key="index"></task>
+            </div>
+        </main>
+    </section>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
