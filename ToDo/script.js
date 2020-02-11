@@ -12,6 +12,11 @@ Vue.component("task", {
 	<div class="task">
 		<div class="content">
 			<p class="task_content">{{data.text}}</p>
+<!--				<div style="display: none">-->
+<!--					<input-->
+<!--						type="text"-->
+<!--						v-model="task.text">-->
+<!--				</div>-->
 		</div>
 		<div class="button"> 
 			<button class="task_done">✅</button>
@@ -22,7 +27,7 @@ Vue.component("task", {
 	`
 });
 
-const url = "http://aboyko.shpp.me:8081/serv-api-v1/getItems.php";
+const url = "https://aboyko.shpp.me/serv-api-v1/getItems.php";
 let vue = new Vue({
 	el: '#app',
 	data: {
@@ -33,11 +38,11 @@ let vue = new Vue({
 	},
 	methods: {
 		del(index){
-			fetch('http://aboyko.shpp.me:8081/serv-api-v1/deleteItem.php?id=' + index)
+			fetch('https://aboyko.shpp.me/serv-api-v1/deleteItem.php?id=' + index)
 				.then(res => res.json())
 				.then((response) => {
 					if(response['ok'] === true){
-						fetch('http://aboyko.shpp.me:8081/serv-api-v1/getItems.php')
+						fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
 						.then(res => res.json())
 						.then((response) => {
 							this.items = response.items
@@ -49,11 +54,11 @@ let vue = new Vue({
 		},
 		add_task() {
 			if(this.new_task.text !== ''){
-				fetch('http://aboyko.shpp.me:8081/serv-api-v1/addItems.php?text=' + this.new_task.text)
+				fetch('https://aboyko.shpp.me/serv-api-v1/addItems.php?text=' + this.new_task.text)
 					.then(res => res.json())
 					.then((response) => {
 						if (response.id) {
-							fetch('http://aboyko.shpp.me:8081/serv-api-v1/getItems.php')
+							fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
 							.then(res => res.json())
 							.then((response) => {
 								this.items = response.items
@@ -64,14 +69,20 @@ let vue = new Vue({
 						}
 					});
 		}},
+		// edit(){
+		// 	this.task.text = this.data.text;
+		// 	this.task.text.style = 'display: block'
+		// }
 	 },
 	mounted() {
-		fetch('http://aboyko.shpp.me:8081/serv-api-v1/getItems.php')
+		fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
 			.then(res => res.json())
 			.then((response) => {
 				this.items = response.items
 			});
+			console.log(items)
 		},
+
 	});
 
 
