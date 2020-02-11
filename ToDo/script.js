@@ -1,8 +1,8 @@
 Vue.component("task", {
 	props: ["data"],
 	methods: {
-		task_none: function () {
-			this.$emit('task_none');
+		task_del: function () {
+			this.$emit('task_del');
 		},
 		task_edit: function () {
 			this.$emit('task_edit');
@@ -16,13 +16,13 @@ Vue.component("task", {
 		<div class="button"> 
 			<button class="task_done">✅</button>
 			<button @click="task_edit()" class="task_edit">✏️</button>
-			<button @click="task_none()" class="task_none">❌</button>
+			<button @click="task_del()" class="task_del">❌</button>
 		</div>
 	</div>
 	`
 });
 
-const url = "http://aboyko.shpp.me/shpp_backend_v1/getItems.php";
+const url = "http://aboyko.shpp.me:8081/serv-api-v1/getItems.php";
 let vue = new Vue({
 	el: '#app',
 	data: {
@@ -33,36 +33,40 @@ let vue = new Vue({
 	},
 	methods: {
 		del(index){
-			fetch('http://aboyko.shpp.me/shpp_backend_v1/deleteItem.php?id=' + index)
+			fetch('http://aboyko.shpp.me:8081/serv-api-v1/deleteItem.php?id=' + index)
 				.then(res => res.json())
 				.then((response) => {
-					this.items = response.items
-				});
-			setTimeout(true,200);
-			fetch('http://aboyko.shpp.me/shpp_backend_v1/getItems.php')
-				.then(res => res.json())
-				.then((response) => {
-					this.items = response.items
+					if(response['ok'] === true){
+						fetch('http://aboyko.shpp.me:8081/serv-api-v1/getItems.php')
+						.then(res => res.json())
+						.then((response) => {
+							this.items = response.items
+						});
+					} else {
+						alert("Error 500. Internal server error. Please try again later")
+					}
 				});
 		},
 		add_task() {
 			if(this.new_task.text !== ''){
-				fetch('http://aboyko.shpp.me/shpp_backend_v1/addItems.php?text=' + this.new_task.text)
+				fetch('http://aboyko.shpp.me:8081/serv-api-v1/addItems.php?text=' + this.new_task.text)
 					.then(res => res.json())
 					.then((response) => {
-						this.items = response.items
+						if (response.id) {
+							fetch('http://aboyko.shpp.me:8081/serv-api-v1/getItems.php')
+							.then(res => res.json())
+							.then((response) => {
+								this.items = response.items
+							});
+							this.new_task.text = '';
+						} else {
+							alert("Error 500. Internal server error. Please try again later")
+						}
 					});
-				setTimeout(true,200);
-				fetch('http://aboyko.shpp.me/shpp_backend_v1/getItems.php')
-					.then(res => res.json())
-					.then((response) => {
-						this.items = response.items
-					});
-				this.new_task.text = '';
 		}},
 	 },
 	mounted() {
-		fetch('http://aboyko.shpp.me/shpp_backend_v1/getItems.php')
+		fetch('http://aboyko.shpp.me:8081/serv-api-v1/getItems.php')
 			.then(res => res.json())
 			.then((response) => {
 				this.items = response.items

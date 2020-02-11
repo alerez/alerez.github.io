@@ -23,8 +23,8 @@
         </header>
         <main>
             <div class="status">
-                <h3 class="status_title">"Активные задачи:"</h3>
-                <task @task_none="del(index)"
+                <h3 class="status_title">Активные задачи:</h3>
+                <task @task_del="del(data.id)"
                       :data="data"
                       v-for="(data, index) in items"
                       :key="index"></task>
