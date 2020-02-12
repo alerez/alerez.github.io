@@ -6,22 +6,27 @@ Vue.component("task", {
 		},
 		task_edit: function () {
 			this.$emit('task_edit');
+		},
+		task_done: function () {
+			this.$emit('task_done');
 		}
 	},
 	template: `
-	<div class="task">
+	<div class="task" v-bind:class="{ taskFalse: data.checked}" >
 		<div class="content">
-			<p class="task_content">{{data.text}}</p>
-<!--				<div style="display: none">-->
-<!--					<input-->
-<!--						type="text"-->
-<!--						v-model="task.text">-->
-<!--				</div>-->
-		</div>
-		<div class="button"> 
-			<button class="task_done">✅</button>
-			<button @click="task_edit()" class="task_edit">✏️</button>
-			<button @click="task_del()" class="task_del">❌</button>
+			<div v-if="!data.editable">
+				<p class="task_content">{{data.text}}</p>
+				<div class="button"> 
+					<button @click="task_done()" class="task_done">✅</button>
+					<button @click="task_edit()" class="task_edit">✏️</button>
+					<button @click="task_del()" class="task_del">❌</button>
+				</div>
+			</div>
+			<div v-if="data.editable">
+       			<input v-model="inputEdit" class="input" size="70px"/>
+   				<button v-on:click="saveEdit(index)">💾</button>
+   				<button v-on:click="disableEdit(index)">⊗</button>
+       		</div>	
 		</div>
 	</div>
 	`
@@ -34,7 +39,9 @@ let vue = new Vue({
 		new_task: {
 			text: ''
 		},
-		items: [],
+		items: [{
+			editable: false
+		}],
 	},
 	methods: {
 		del(index){
@@ -69,10 +76,22 @@ let vue = new Vue({
 						}
 					});
 		}},
-		// edit(){
-		// 	this.task.text = this.data.text;
-		// 	this.task.text.style = 'display: block'
-		// }
+		task_done(index){
+			this.items[index].checked = true;
+			fetch('https://aboyko.shpp.me/serv-api-v1/changeItem.php?checked=' + this.items[index].checked + '&id=' + index + '&text=' + this.items[index].text)
+				.then(res => res.json())
+				.then((response) => {
+						fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
+							.then(res => res.json())
+							.then((response) => {
+								this.items = response.items
+							});
+				});
+		},
+		task_edit(index){
+			this.items[index].editable = true;
+			this.inputEdit.text = this.items[index].text;
+		}
 	 },
 	mounted() {
 		fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
@@ -80,7 +99,6 @@ let vue = new Vue({
 			.then((response) => {
 				this.items = response.items
 			});
-			console.log(items)
 		},
 
 	});

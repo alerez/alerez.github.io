@@ -13,7 +13,7 @@
             <h1 style="display: flex; font-size: 70px; margin: 0 auto; padding-left: 15px;">ToDo_List<span style="color: limegreen"> / </span>Ш++</h1>
             <label>
                 <input class="new_todo"
-                       autofocus autocomplete="off"
+                       autofocus autocomplete="on"
                        placeholder="Тут можно что-то написать)))"
                        type="text"
                        v-model="new_task.text">
@@ -22,9 +22,10 @@
         </header>
         <main>
             <div class="status">
-                <h3 class="status_title">{{'Активные задачи:' + items.length}}</h3>
+                <h3 class="status_title">{{'Активные задачи: ' + items.length}}</h3>
                 <task @task_del="del(data.id)"
-                      @task_edit="edit(data)"
+                      @task_edit="task_edit(index)"
+                      @task_done="task_done(index)"
                       :data="data"
                       v-for="(data, index) in items"
                       :key="index"></task>

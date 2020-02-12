@@ -136,8 +136,11 @@ main{
     flex-direction: row;
     padding: 16px;
     background-color: #ececec;
-    border-bottom: limegreen solid 2px;
+    border-bottom: #cd1537 solid 3px;
     margin-top: 10px;
+}
+.taskFalse{
+    border-bottom: limegreen solid 3px;
 }
 .task_content{
     width: 80%;
