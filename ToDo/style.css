@@ -129,7 +129,6 @@ body {
 
 main{
     background-color: rgba(255, 255, 255, 0);
-
 }
 .task{
     display: flex;
@@ -144,11 +143,17 @@ main{
 }
 .task_content{
     width: 80%;
+    height: 80%;
+    position: relative;
 }
 .button{
     display: flex;
     flex-direction: row;
     margin: 0 0 0 auto;
+}
+.check{
+    position: absolute;
+    margin-left: 80%;
 }
 button{
     cursor: pointer;
@@ -174,4 +179,8 @@ label{
 }
 p{
     font-size: 20px;
+}
+.contentText{
+    display: flex;
+    flex-direction: row;
 }

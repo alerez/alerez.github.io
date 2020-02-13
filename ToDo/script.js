@@ -9,23 +9,29 @@ Vue.component("task", {
 		},
 		task_done: function () {
 			this.$emit('task_done');
-		}
+		},
+		save: function () {
+			this.$emit('save');
+		},
+		disable: function () {
+			this.$emit('disable');
+		},
 	},
 	template: `
 	<div class="task" v-bind:class="{ taskFalse: data.checked}" >
 		<div class="content">
-			<div v-if="!data.editable">
+			<div v-if="!data.editable" class="contentText">
 				<p class="task_content">{{data.text}}</p>
-				<div class="button"> 
-					<button @click="task_done()" class="task_done">✅</button>
+				<div class="button check"> 
+					<input type="checkbox" v-model="data.checked" @click="task_done()" class="task_done">
 					<button @click="task_edit()" class="task_edit">✏️</button>
 					<button @click="task_del()" class="task_del">❌</button>
 				</div>
 			</div>
 			<div v-if="data.editable">
-       			<input v-model="inputEdit" class="input" size="70px"/>
-   				<button v-on:click="saveEdit(index)">💾</button>
-   				<button v-on:click="disableEdit(index)">⊗</button>
+       			<input v-model="data.inputedit" class="input" size="70px"/>
+   				<button @click="save()">💾</button>
+   				<button @click="disable()">⊗</button>
        		</div>	
 		</div>
 	</div>
@@ -37,23 +43,37 @@ let vue = new Vue({
 	el: '#app',
 	data: {
 		new_task: {
-			text: ''
+			text: '',
+			editable: false,
+			checked: false
 		},
 		items: [{
-			editable: false
-		}],
+			inputedit: '',
+			checked: false
+		}]
 	},
 	methods: {
+		// getItems(){
+		// 	fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
+		// 		.then(res => res.json())
+		// 		.then((response) => {
+		// 			this.items = response.items
+		// 		});
+		// },
 		del(index){
 			fetch('https://aboyko.shpp.me/serv-api-v1/deleteItem.php?id=' + index)
 				.then(res => res.json())
 				.then((response) => {
 					if(response['ok'] === true){
 						fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
-						.then(res => res.json())
-						.then((response) => {
-							this.items = response.items
-						});
+							.then(res => res.json())
+							.then((response) => {
+								this.items = response.items.map((item) => {
+									item.editable = false;
+
+									return item;
+								})
+							});
 					} else {
 						alert("Error 500. Internal server error. Please try again later")
 					}
@@ -66,38 +86,58 @@ let vue = new Vue({
 					.then((response) => {
 						if (response.id) {
 							fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
-							.then(res => res.json())
-							.then((response) => {
-								this.items = response.items
-							});
+								.then(res => res.json())
+								.then((response) => {
+									this.items = response.items.map((item) => {
+										item.editable = false;
+										return item;
+									})
+								});
 							this.new_task.text = '';
 						} else {
 							alert("Error 500. Internal server error. Please try again later")
 						}
 					});
 		}},
-		task_done(index){
-			this.items[index].checked = true;
-			fetch('https://aboyko.shpp.me/serv-api-v1/changeItem.php?checked=' + this.items[index].checked + '&id=' + index + '&text=' + this.items[index].text)
+		task_done(index, id){
+			this.items[index].checked = this.items[index].checked === false;
+			this.checked = this.items[index].checked;
+			fetch('https://aboyko.shpp.me/serv-api-v1/changeItem.php?id=' + id + '&text=' + this.items[index].text + '&checked=' + this.items[index].checked)
 				.then(res => res.json())
 				.then((response) => {
-						fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
-							.then(res => res.json())
-							.then((response) => {
-								this.items = response.items
-							});
+					fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
+						.then(res => res.json())
+						.then((response) => {
+							this.items = response.items.map((item) => {
+								item.editable = false;
+								return item;
+							})
+						});
 				});
 		},
 		task_edit(index){
+			this.items[index].inputedit = this.items[index].text;
 			this.items[index].editable = true;
-			this.inputEdit.text = this.items[index].text;
+		},
+		save(index, id){
+			this.items[index].text = this.items[index].inputedit;
+			fetch('https://aboyko.shpp.me/serv-api-v1/changeItem.php?id=' + id + '&text=' + this.items[index].text + '&checked=' + this.items[index].checked)
+				.then(res => res.json());
+			this.items[index].editable = false;
+		},
+		disable(index){
+			this.items[index].editable = false;
+			this.items[index].inputedit = '';
 		}
 	 },
 	mounted() {
 		fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
 			.then(res => res.json())
 			.then((response) => {
-				this.items = response.items
+				this.items = response.items.map((item) => {
+					item.editable = false;
+					return item;
+				})
 			});
 		},
 

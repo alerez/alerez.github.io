@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -12,7 +12,8 @@
         <header class="header">
             <h1 style="display: flex; font-size: 70px; margin: 0 auto; padding-left: 15px;">ToDo_List<span style="color: limegreen"> / </span>Ш++</h1>
             <label>
-                <input class="new_todo"
+                <input v-on:keyup.enter="add_task()"
+                       class="new_todo"
                        autofocus autocomplete="on"
                        placeholder="Тут можно что-то написать)))"
                        type="text"
@@ -25,7 +26,9 @@
                 <h3 class="status_title">{{'Активные задачи: ' + items.length}}</h3>
                 <task @task_del="del(data.id)"
                       @task_edit="task_edit(index)"
-                      @task_done="task_done(index)"
+                      @task_done="task_done(index, data.id)"
+                      @save="save(index, data.id)"
+                      @disable="disable(index)"
                       :data="data"
                       v-for="(data, index) in items"
                       :key="index"></task>
