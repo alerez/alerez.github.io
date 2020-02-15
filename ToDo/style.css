@@ -125,6 +125,7 @@ body {
     height: 100%;
     padding: 10px;
     background-color: lightgreen;
+    text-align: center;
 }
 
 main{
@@ -157,17 +158,19 @@ main{
 }
 button{
     cursor: pointer;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-top: -5px;
 }
 .task_done{
-    padding-left: 5px;
     cursor: pointer;
+    font-size: 30px;
+    margin-top: -7px;
 }
 .task_edit{
-    margin-left: 5px;
     cursor: pointer;
 }
 .task_none{
-    padding-left: 5px;
     cursor: pointer;
 }
 .status h3{

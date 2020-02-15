@@ -22,10 +22,11 @@ Vue.component("task", {
 		<div class="content">
 			<div v-if="!data.editable" class="contentText">
 				<p class="task_content">{{data.text}}</p>
-				<div class="button check"> 
-					<input type="checkbox" v-model="data.checked" @click="task_done()" class="task_done">
-					<button @click="task_edit()" class="task_edit">✏️</button>
-					<button @click="task_del()" class="task_del">❌</button>
+				<div class="button check">
+					<button v-if="!data.checked" @click="task_done()" class="task_done taskButton"> ☐ </button>
+					<button v-if="data.checked" @click="task_done()" class="task_done taskButton"> ☑ </button>
+					<button @click="task_edit()" class="task_edit taskButton"> ✏️ </button>
+					<button @click="task_del()" class="task_del taskButton"> ❌ </button>
 				</div>
 			</div>
 			<div v-if="data.editable">
@@ -75,12 +76,12 @@ let vue = new Vue({
 				});
 		},
 		add_task() {
-			if(this.new_task.text !== ''){
+			if(this.new_task.text !== '' || this.new_task.text !== ' '){
 				fetch('https://aboyko.shpp.me/serv-api-v1/addItems.php?text=' + this.new_task.text)
 					.then(res => res.json())
 					.then((response) => {
 						if (response.id) {
-								this.getItems()
+								this.getItems();
 							this.new_task.text = '';
 						} else {
 							alert("Error 500. Internal server error. Please try again later")
@@ -101,11 +102,12 @@ let vue = new Vue({
 			this.items[index].editable = true;
 		},
 		save(index, id){
-			this.items[index].text = this.items[index].inputedit;
-			fetch('https://aboyko.shpp.me/serv-api-v1/changeItem.php?id=' + id + '&text=' + this.items[index].text + '&checked=' + this.items[index].checked)
-				.then(res => res.json());
-			this.items[index].editable = false;
-		},
+			if(this.new_task.text !== '' || this.new_task.text !== ' ') {
+				this.items[index].text = this.items[index].inputedit;
+				fetch('https://aboyko.shpp.me/serv-api-v1/changeItem.php?id=' + id + '&text=' + this.items[index].text + '&checked=' + this.items[index].checked)
+					.then(res => res.json());
+				this.items[index].editable = false;
+			}},
 		disable(index){
 			this.items[index].editable = false;
 			this.items[index].inputedit = '';
