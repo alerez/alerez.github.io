@@ -164,7 +164,6 @@ button{
 }
 .task_done{
     cursor: pointer;
-    font-size: 30px;
     margin-top: -7px;
 }
 .task_edit{

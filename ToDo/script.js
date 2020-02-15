@@ -23,10 +23,10 @@ Vue.component("task", {
 			<div v-if="!data.editable" class="contentText">
 				<p class="task_content">{{data.text}}</p>
 				<div class="button check">
-					<button v-if="!data.checked" @click="task_done()" class="task_done taskButton"> ☐ </button>
-					<button v-if="data.checked" @click="task_done()" class="task_done taskButton"> ☑ </button>
-					<button @click="task_edit()" class="task_edit taskButton"> ✏️ </button>
-					<button @click="task_del()" class="task_del taskButton"> ❌ </button>
+					<button v-if="!data.checked" @click="task_done()" class="task_done taskButton" style="color: rgba(26,205,30,0.89); font-size: 32px"> ☐ </button>
+					<button v-if="data.checked" @click="task_done()" class="task_done taskButton" style="color: rgba(26,205,30,0.89); font-size: 32px"> ☑ </button>
+					<button @click="task_edit()" class="task_edit taskButton" style="color: #eca81a; font-size: 30px"> ✎️ </button>
+					<button @click="task_del()" class="task_del taskButton" style="color: #cd1537; font-size: 26px"> ✕ </button>
 				</div>
 			</div>
 			<div v-if="data.editable">
