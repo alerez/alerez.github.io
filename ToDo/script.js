@@ -39,7 +39,7 @@ Vue.component("task", {
 	`
 });
 
-const url = "https://aboyko.shpp.me/serv-api-v1/getItems.php";
+const url = "https://aboyko.shpp.me/serv-api-v1";
 let vue = new Vue({
 	el: '#app',
 	data: {
@@ -55,7 +55,7 @@ let vue = new Vue({
 	},
 	methods: {
 		getItems: function(){
-			fetch('https://aboyko.shpp.me/serv-api-v1/getItems.php')
+			fetch(url + '/getItems.php')
 				.then(res => res.json())
 				.then((response) => {
 					this.items = response.items.map((item) => {
@@ -65,7 +65,7 @@ let vue = new Vue({
 				});
 		},
 		del(index){
-			fetch('https://aboyko.shpp.me/serv-api-v1/deleteItem.php?id=' + index)
+			fetch(url + '/deleteItem.php?id=' + index)
 				.then(res => res.json())
 				.then((response) => {
 					if(response['ok'] === true){
@@ -77,7 +77,7 @@ let vue = new Vue({
 		},
 		add_task() {
 			if(this.new_task.text !== '' || this.new_task.text !== ' '){
-				fetch('https://aboyko.shpp.me/serv-api-v1/addItems.php?text=' + this.new_task.text)
+				fetch(url + '/addItems.php?text=' + this.new_task.text)
 					.then(res => res.json())
 					.then((response) => {
 						if (response.id) {
@@ -91,7 +91,7 @@ let vue = new Vue({
 		task_done(index, id){
 			this.items[index].checked = this.items[index].checked === false;
 			this.checked = this.items[index].checked;
-			fetch('https://aboyko.shpp.me/serv-api-v1/changeItem.php?id=' + id + '&text=' + this.items[index].text + '&checked=' + this.items[index].checked)
+			fetch(url + '/changeItem.php?id=' + id + '&text=' + this.items[index].text + '&checked=' + this.items[index].checked)
 				.then(res => res.json())
 				.then((response) => {
 					this.getItems()
@@ -99,12 +99,12 @@ let vue = new Vue({
 		},
 		task_edit(index){
 			this.items[index].inputedit = this.items[index].text;
-			this.items[index].editable = true;
+			this.items[index].editable = true;a="g\\nff"
 		},
 		save(index, id){
 			if(this.new_task.text !== '' || this.new_task.text !== ' ') {
 				this.items[index].text = this.items[index].inputedit;
-				fetch('https://aboyko.shpp.me/serv-api-v1/changeItem.php?id=' + id + '&text=' + this.items[index].text + '&checked=' + this.items[index].checked)
+				fetch(url + '/changeItem.php?id=' + id + '&text=' + this.items[index].text + '&checked=' + this.items[index].checked)
 					.then(res => res.json());
 				this.items[index].editable = false;
 			}},
