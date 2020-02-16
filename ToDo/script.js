@@ -99,7 +99,7 @@ let vue = new Vue({
 		},
 		task_edit(index){
 			this.items[index].inputedit = this.items[index].text;
-			this.items[index].editable = true;a="g\\nff"
+			this.items[index].editable = true;
 		},
 		save(index, id){
 			if(this.new_task.text !== '' || this.new_task.text !== ' ') {
