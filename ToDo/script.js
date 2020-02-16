@@ -77,7 +77,7 @@ let vue = new Vue({
 		},
 		add_task() {
 			if(this.new_task.text !== '' || this.new_task.text !== ' '){
-				fetch(url + '/addItems.php?text=' + this.new_task.text)
+				fetch(url + '/addItems.php?text=' + encodeURIComponent(this.new_task.text))
 					.then(res => res.json())
 					.then((response) => {
 						if (response.id) {
@@ -91,7 +91,7 @@ let vue = new Vue({
 		task_done(index, id){
 			this.items[index].checked = this.items[index].checked === false;
 			this.checked = this.items[index].checked;
-			fetch(url + '/changeItem.php?id=' + encodeURI(id) + '&text=' + encodeURI(this.items[index].text) + '&checked=' + encodeURI(this.items[index].checked))
+			fetch(url + '/changeItem.php?id=' + encodeURIComponent(id) + '&text=' + encodeURIComponent(this.items[index].text) + '&checked=' + encodeURIComponent(this.items[index].checked))
 				.then(res => res.json())
 				.then((response) => {
 					this.getItems()
@@ -104,7 +104,7 @@ let vue = new Vue({
 		save(index, id){
 			if(this.new_task.text !== '' || this.new_task.text !== ' ') {
 				this.items[index].text = this.items[index].inputedit;
-				fetch(url + '/changeItem.php?id=' + encodeURI(id) + '&text=' + encodeURI(this.items[index].text) + '&checked=' + encodeURI(this.items[index].checked))
+				fetch(url + '/changeItem.php?id=' + encodeURIComponent(id) + '&text=' + encodeURIComponent(this.items[index].text) + '&checked=' + encodeURIComponent(this.items[index].checked))
 					.then(res => res.json());
 				this.items[index].editable = false;
 			}},
