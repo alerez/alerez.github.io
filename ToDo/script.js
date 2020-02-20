@@ -77,8 +77,14 @@ let vue = new Vue({
 		},
 		add_task() {
 			if(this.new_task.text !== '' || this.new_task.text !== ' '){
-				fetch(url + '/addItems.php?text=' + encodeURIComponent(this.new_task.text))
-					.then(res => res.json())
+				let request = JSON.stringify({"text":this.new_task.text});
+				fetch(url + '/addItems.php', {
+					method: 'POST',
+					body: request,
+					headers: {
+						'Content-Type': 'application/json'
+					},
+				}).then(res => res.json())
 					.then((response) => {
 						if (response.id) {
 								this.getItems();
@@ -87,7 +93,9 @@ let vue = new Vue({
 							alert("Error 500. Internal server error. Please try again later")
 						}
 					});
-		}},
+		}
+			console.log(JSON.stringify(this.new_task.text))},// ввааупамамавмавимав
+		console:(JSON.stringify(this.items)),
 		task_done(index, id){
 			this.items[index].checked = this.items[index].checked === false;
 			this.checked = this.items[index].checked;
