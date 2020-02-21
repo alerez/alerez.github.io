@@ -65,8 +65,14 @@ let vue = new Vue({
 				});
 		},
 		del(index){
-			fetch(url + '/deleteItem.php?id=' + index)
-				.then(res => res.json())
+			let request = JSON.stringify({id: index, });
+			fetch(url + '/deleteItem.php', {
+				method: 'DELETE',
+				body: request,
+				headers: {
+					'Content-Type': 'application/json;'
+				},
+			}).then(res => res.json())
 				.then((response) => {
 					if(response['ok'] === true){
 						this.getItems()
@@ -77,12 +83,12 @@ let vue = new Vue({
 		},
 		add_task() {
 			if(this.new_task.text !== '' || this.new_task.text !== ' '){
-				let request = JSON.stringify({"text":this.new_task.text});
+				let request = JSON.stringify({text: this.new_task.text});
 				fetch(url + '/addItems.php', {
 					method: 'POST',
 					body: request,
 					headers: {
-						'Content-Type': 'application/json'
+						'Content-Type': 'application/json;'
 					},
 				}).then(res => res.json())
 					.then((response) => {
@@ -95,12 +101,18 @@ let vue = new Vue({
 					});
 		}
 			console.log(JSON.stringify(this.new_task.text))},// ввааупамамавмавимав
-		console:(JSON.stringify(this.items)),
 		task_done(index, id){
 			this.items[index].checked = this.items[index].checked === false;
 			this.checked = this.items[index].checked;
-			fetch(url + '/changeItem.php?id=' + encodeURIComponent(id) + '&text=' + encodeURIComponent(this.items[index].text) + '&checked=' + encodeURIComponent(this.items[index].checked))
-				.then(res => res.json())
+			// fetch(url + '/changeItem.php?id=' + encodeURIComponent(id) + '&text=' + encodeURIComponent(this.items[index].text) + '&checked=' + encodeURIComponent(this.items[index].checked))
+			let request = JSON.stringify({text: this.items[index].text, id: id,  checked: this.items[index].checked});
+			fetch(url + '/changeItem.php', {
+				method: 'PUT',
+				body: request,
+				headers: {
+					'Content-Type': 'application/json;'
+				},
+			}).then(res => res.json())
 				.then((response) => {
 					this.getItems()
 				});
@@ -112,8 +124,14 @@ let vue = new Vue({
 		save(index, id){
 			if(this.new_task.text !== '' || this.new_task.text !== ' ') {
 				this.items[index].text = this.items[index].inputedit;
-				fetch(url + '/changeItem.php?id=' + encodeURIComponent(id) + '&text=' + encodeURIComponent(this.items[index].text) + '&checked=' + encodeURIComponent(this.items[index].checked))
-					.then(res => res.json());
+				let request = JSON.stringify({text: this.items[index].text, id: id,  checked: this.items[index].checked});
+				fetch(url + '/changeItem.php', {
+					method: 'PUT',
+					body: request,
+					headers: {
+						'Content-Type': 'application/json;'
+					},
+				}).then(res => res.json());
 				this.items[index].editable = false;
 			}},
 		disable(index){
