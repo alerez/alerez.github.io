@@ -64,7 +64,7 @@ let vue = new Vue({
 					})
 				});
 		},
-		del(index){
+		getDelete: function(index){
 			let request = JSON.stringify({id: index, });
 			fetch(url + '/deleteItem.php', {
 				method: 'DELETE',
@@ -81,30 +81,25 @@ let vue = new Vue({
 					}
 				});
 		},
-		add_task() {
-			if(this.new_task.text !== '' || this.new_task.text !== ' '){
-				let request = JSON.stringify({text: this.new_task.text});
-				fetch(url + '/addItems.php', {
-					method: 'POST',
-					body: request,
-					headers: {
-						'Content-Type': 'application/json;'
-					},
-				}).then(res => res.json())
-					.then((response) => {
-						if (response.id) {
-								this.getItems();
-							this.new_task.text = '';
-						} else {
-							alert("Error 500. Internal server error. Please try again later")
-						}
-					});
-		}
-			console.log(JSON.stringify(this.new_task.text))},// ввааупамамавмавимав
-		task_done(index, id){
-			this.items[index].checked = this.items[index].checked === false;
-			this.checked = this.items[index].checked;
-			// fetch(url + '/changeItem.php?id=' + encodeURIComponent(id) + '&text=' + encodeURIComponent(this.items[index].text) + '&checked=' + encodeURIComponent(this.items[index].checked))
+		getPost: function(){
+			let request = JSON.stringify({text: this.new_task.text});
+			fetch(url + '/addItems.php', {
+				method: 'POST',
+				body: request,
+				headers: {
+					'Content-Type': 'application/json;'
+				},
+			}).then(res => res.json())
+				.then((response) => {
+					if (response.id) {
+						this.getItems();
+						this.new_task.text = '';
+					} else {
+						alert("Error 500. Internal server error. Please try again later")
+					}
+				});
+		},
+		getPut: function(index, id){
 			let request = JSON.stringify({text: this.items[index].text, id: id,  checked: this.items[index].checked});
 			fetch(url + '/changeItem.php', {
 				method: 'PUT',
@@ -114,8 +109,21 @@ let vue = new Vue({
 				},
 			}).then(res => res.json())
 				.then((response) => {
-					this.getItems()
-				});
+				this.getItems()
+			});
+		},
+		del(index){
+			this.getDelete(index)
+		},
+		add_task() {
+			if(this.new_task.text !== '' || this.new_task.text !== ' '){
+				this.getPost()
+			}
+		},
+		task_done(index, id){
+			this.items[index].checked = this.items[index].checked === false;
+			this.checked = this.items[index].checked;
+			this.getPut(index, id)
 		},
 		task_edit(index){
 			this.items[index].inputedit = this.items[index].text;
@@ -124,14 +132,7 @@ let vue = new Vue({
 		save(index, id){
 			if(this.new_task.text !== '' || this.new_task.text !== ' ') {
 				this.items[index].text = this.items[index].inputedit;
-				let request = JSON.stringify({text: this.items[index].text, id: id,  checked: this.items[index].checked});
-				fetch(url + '/changeItem.php', {
-					method: 'PUT',
-					body: request,
-					headers: {
-						'Content-Type': 'application/json;'
-					},
-				}).then(res => res.json());
+				this.getPut(index, id);
 				this.items[index].editable = false;
 			}},
 		disable(index){
