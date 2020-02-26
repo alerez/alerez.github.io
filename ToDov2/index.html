@@ -13,8 +13,8 @@
             <img src="UserName.png" width="40px" height="40px">
         </div>
             <div class="UserName">
-                <h3>{{USER}}</h3>
-                <button style="text-decoration: none; color: #f7f7f7; font-size: 18px; font-weight: 600; background-color: #2e2e2e">Exit &#128682;</button>
+                <h3>{{localStorage.getItem('name')}}</h3>
+                <button @click="exit()" style="text-decoration: none; color: #f7f7f7; font-size: 18px; font-weight: 600; background-color: #2e2e2e">Exit &#128682;</button>
             </div>
     </div>
     <section class="todoapp">

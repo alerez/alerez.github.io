@@ -40,6 +40,7 @@ Vue.component("task", {
 });
 
 const url = "https://aboyko.shpp.me/serv-api-v2/";
+const site = "https://alerez.github.io/ToDov2/LoginToDo/login.html";
 let vue = new Vue({
 	el: '#app',
 	data: {
@@ -138,6 +139,17 @@ let vue = new Vue({
 		disable(index){
 			this.items[index].editable = false;
 			this.items[index].inputedit = '';
+		},
+		exit(){
+			fetch(url + 'addItems.php', {
+				method: 'POST',
+			}).then(res => res.json())
+				.then((response) => {
+					if(response.ok){
+						localStorage.clear();
+						window.location = site;
+					}
+				});
 		}
 	 },
 	mounted() {

@@ -43,6 +43,7 @@
 					}).then(res => res.json())
 						.then((response) => {
 							if (response.ok) {
+								localStorage.setItem('name', this.nickName);
 								this.nickName = '';
 								this.pass = '';
 								window.location = site
