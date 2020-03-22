@@ -103,11 +103,6 @@ header{
 }
 
 
-
-
-
-
-
 .submit{
     display: block;
     width: 200px;
@@ -127,7 +122,7 @@ header{
 .submit:hover{
     background-color: #F7F7F7;
     border: 2px solid #145896;
-    color: #0B0B0C;
+    color: #145896;
 }
 .inp{
     width: 350px;
@@ -172,7 +167,7 @@ header{
     color: #145896;
 }
 .inpEmail{
-    width: 373px;
+    width: 340px;
     height: 32px;
     border: none;
     border-bottom: 1px solid #0B0B0C;
@@ -191,39 +186,31 @@ header{
     font-family: Noto Sans, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 50px;
+    font-size: 18px;
     color: #145896;
+    margin-top: 30px;
 }
-
+.inputForm{
+    margin: 0 auto;
+}
 .criptoBlock{
     margin-top: 50px;
     display: flex;
     flex-direction: column;
 
 }
-.criptoBlock > div{
-    width: 120px;
-    height: 32px;
-    color: #F7F7F7;
-    background-color: #0B0B0C;
-    border: #145896 solid 1px;
-}
 .bitCripto{
-    margin-top: 50px;
     display: flex;
     flex-direction: column;
 }
-.bitCripto > div{
-    width: 120px;
-    height: 32px;
-    color: #F7F7F7;
-    background-color: #0B0B0C;
+.nameCurs{
+    width: 200px;
+    color: #202020;
+    background-color: #ffffff;
     border: #145896 solid 1px;
+    text-align: center;
+    padding: 16px;
 }
-
-
-
 
 
 
@@ -308,3 +295,50 @@ header{
     outline:none;
     padding: 5px;
 }
+
+
+
+.Bitcoin{
+    display: block;
+}
+.BitcoinCash{
+    display: none;
+}
+.Ethereum{
+    display: none;
+}
+.EthereumClassic{
+    display: none;
+}
+.Monero{
+    display: none;
+}
+.Ripple{
+    display: none;
+}
+.Litecoin{
+    display: none;
+}
+.Dash{
+    display: none;
+}
+.Zcash{
+    display: none;
+}
+.Dogecoin{
+    display: none;
+}
+.Stellar{
+    display: none;
+}
+
+
+
+.BTC:hover .Bitcoin{
+    display: block;
+    background-color: #0B0B0C;
+}
+.BTH:hover .BitcoinCash{
+    display: block;
+}
+

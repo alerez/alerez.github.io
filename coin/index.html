@@ -74,15 +74,15 @@
         </div>
     </div>
     <h1 class="detal">Детали обмена</h1>
-    <div style="display: flex; flex-direction: column; margin-left: 7%; margin-top: 3%">
-        <div>
-            <span class="form">Ваш E-mail ящик:</span>
+    <div style="display: flex; flex-wrap: wrap; margin-left: 7%; margin-top: 3%">
+        <div class="inputForm">
+            <h6 class="form">Ваш E-mail ящик:</h6>
             <label>
                 <input type="email" class="inpEmail" placeholder="Например: name@gmail.com">
             </label>
         </div>
-        <div>
-            <span class="form">Кошелёк для получения:</span>
+        <div class="inputForm">
+            <h6 class="form">Кошелёк для получения:</h6>
             <label>
                 <input type="text" class="inpkey" placeholder="Например: 57hraAvKAqoNSdke84NSIE">
             </label>
@@ -91,35 +91,171 @@
     <button class="submit" type="submit">ОБМЕНЯТЬ</button>
 </main>
 
-<div style="display: flex; flex-direction: row; align-items: center; justify-content: center; display: none">
-    <div class="criptoBlock">
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+    <div class="criptoBlock formSize">
         <h3>Отдаете</h3>
-        <div>Bitcoin</div>
-        <div>Bitcoin Cash</div>
-        <div>Ethereum</div>
-        <div>Ethereum Classic</div>
-        <div>Ripple</div>
-        <div>Litecoin</div>
-        <div>Dash</div>
-        <div>Zcash</div>
-        <div>Dogecoin</div>
+        <div class="nameCurs BTC">Bitcoin</div>
+        <div class="nameCurs BTH">Bitcoin Cash</div>
+        <div class="nameCurs ETH">Ethereum</div>
+        <div class="nameCurs ETC">Ethereum Classic</div>
+        <div class="nameCurs XMR">Monero</div>
+        <div class="nameCurs XRP">Ripple</div>
+        <div class="nameCurs LTC">Litecoin</div>
+        <div class="nameCurs DSH">Dash</div>
+        <div class="nameCurs ZEC">Zcash</div>
+        <div class="nameCurs XDG">Dogecoin</div>
+        <div class="nameCurs XLM">Stellar</div>
     </div>
-    <div class="bitCripto">
+    <div class="bitCripto formSize Bitcoin">
         <h3>Получаете</h3>
-        <div>Bitcoin</div>
-        <div>Bitcoin Cash</div>
-        <div>Ethereum</div>
-        <div>Ethereum Classic</div>
-        <div>Ripple</div>
-        <div>Litecoin</div>
-        <div>Dash</div>
-        <div>Zcash</div>
-        <div>Dogecoin</div>
+        <div class="nameCurs">Bitcoin Cash</div>
+        <div class="nameCurs">Ethereum</div>
+        <div class="nameCurs">Ethereum Classic</div>
+        <div class="nameCurs">Monero</div>
+        <div class="nameCurs">Ripple</div>
+        <div class="nameCurs">Litecoin</div>
+        <div class="nameCurs">Dash</div>
+        <div class="nameCurs">Zcash</div>
+        <div class="nameCurs">Dogecoin</div>
+        <div class="nameCurs">Stellar</div>
     </div>
+    <div class="bitCripto formSize BitcoinCash">
+        <h3>Получаете</h3>
+        <div class="nameCurs">Bitcoin</div>
+        <div class="nameCurs">Ethereum</div>
+        <div class="nameCurs">Ethereum Classic</div>
+        <div class="nameCurs">Monero</div>
+        <div class="nameCurs">Ripple</div>
+        <div class="nameCurs">Litecoin</div>
+        <div class="nameCurs">Dash</div>
+        <div class="nameCurs">Zcash</div>
+        <div class="nameCurs">Dogecoin</div>
+        <div class="nameCurs">Stellar</div>
+    </div>
+    <div class="bitCripto formSize Ethereum">
+        <h3>Получаете</h3>
+        <div class="nameCurs">Bitcoin</div>
+        <div class="nameCurs">Bitcoin Cash</div>
+        <div class="nameCurs">Ethereum Classic</div>
+        <div class="nameCurs">Monero</div>
+        <div class="nameCurs">Ripple</div>
+        <div class="nameCurs">Litecoin</div>
+        <div class="nameCurs">Dash</div>
+        <div class="nameCurs">Zcash</div>
+        <div class="nameCurs">Dogecoin</div>
+        <div class="nameCurs">Stellar</div>
+    </div>  
+    <div class="bitCripto formSize EthereumClassic">
+        <h3>Получаете</h3>
+        <div class="nameCurs">Bitcoin</div>
+        <div class="nameCurs">Bitcoin Cash</div>
+        <div class="nameCurs">Ethereum</div>
+        <div class="nameCurs">Monero</div>
+        <div class="nameCurs">Ripple</div>
+        <div class="nameCurs">Litecoin</div>
+        <div class="nameCurs">Dash</div>
+        <div class="nameCurs">Zcash</div>
+        <div class="nameCurs">Dogecoin</div>
+        <div class="nameCurs">Stellar</div>
+    </div>  
+    <div class="bitCripto formSize Monero">
+        <h3>Получаете</h3>
+        <div class="nameCurs">Bitcoin</div>
+        <div class="nameCurs">Bitcoin Cash</div>
+        <div class="nameCurs">Ethereum</div>
+        <div class="nameCurs">Ethereum Classic</div>
+        <div class="nameCurs">Ripple</div>
+        <div class="nameCurs">Litecoin</div>
+        <div class="nameCurs">Dash</div>
+        <div class="nameCurs">Zcash</div>
+        <div class="nameCurs">Dogecoin</div>
+        <div class="nameCurs">Stellar</div>
+    </div>  
+    <div class="bitCripto formSize Ripple">
+        <h3>Получаете</h3>
+        <div class="nameCurs">Bitcoin</div>
+        <div class="nameCurs">Bitcoin Cash</div>
+        <div class="nameCurs">Ethereum</div>
+        <div class="nameCurs">Ethereum Classic</div>
+        <div class="nameCurs">Monero</div>
+        <div class="nameCurs">Litecoin</div>
+        <div class="nameCurs">Dash</div>
+        <div class="nameCurs">Zcash</div>
+        <div class="nameCurs">Dogecoin</div>
+        <div class="nameCurs">Stellar</div>
+    </div>  
+    <div class="bitCripto formSize Litecoin">
+        <h3>Получаете</h3>
+        <div class="nameCurs">Bitcoin</div>
+        <div class="nameCurs">Bitcoin Cash</div>
+        <div class="nameCurs">Ethereum</div>
+        <div class="nameCurs">Ethereum Classic</div>
+        <div class="nameCurs">Monero</div>
+        <div class="nameCurs">Ripple</div>
+        <div class="nameCurs">Dash</div>
+        <div class="nameCurs">Zcash</div>
+        <div class="nameCurs">Dogecoin</div>
+        <div class="nameCurs">Stellar</div>
+    </div>  
+    <div class="bitCripto formSize Dash">
+        <h3>Получаете</h3>
+        <div class="nameCurs">Bitcoin</div>
+        <div class="nameCurs">Bitcoin Cash</div>
+        <div class="nameCurs">Ethereum</div>
+        <div class="nameCurs">Ethereum Classic</div>
+        <div class="nameCurs">Monero</div>
+        <div class="nameCurs">Ripple</div>
+        <div class="nameCurs">Litecoin</div>
+        <div class="nameCurs">Zcash</div>
+        <div class="nameCurs">Dogecoin</div>
+        <div class="nameCurs">Stellar</div>
+    </div>  
+    <div class="bitCripto formSize Zcash">
+        <h3>Получаете</h3>
+        <div class="nameCurs">Bitcoin</div>
+        <div class="nameCurs">Bitcoin Cash</div>
+        <div class="nameCurs">Ethereum</div>
+        <div class="nameCurs">Ethereum Classic</div>
+        <div class="nameCurs">Monero</div>
+        <div class="nameCurs">Ripple</div>
+        <div class="nameCurs">Litecoin</div>
+        <div class="nameCurs">Dash</div>
+        <div class="nameCurs">Dogecoin</div>
+        <div class="nameCurs">Stellar</div>
+    </div>  
+    <div class="bitCripto formSize Dogecoin">
+        <h3>Получаете</h3>
+        <div class="nameCurs">Bitcoin</div>
+        <div class="nameCurs">Bitcoin Cash</div>
+        <div class="nameCurs">Ethereum</div>
+        <div class="nameCurs">Ethereum Classic</div>
+        <div class="nameCurs">Monero</div>
+        <div class="nameCurs">Ripple</div>
+        <div class="nameCurs">Litecoin</div>
+        <div class="nameCurs">Dash</div>
+        <div class="nameCurs">Zcash</div>
+        <div class="nameCurs">Stellar</div>
+    </div>  
+    <div class="bitCripto formSize Stellar">
+        <h3>Получаете</h3>
+        <div class="nameCurs">Bitcoin</div>
+        <div class="nameCurs">Bitcoin Cash</div>
+        <div class="nameCurs">Ethereum</div>
+        <div class="nameCurs">Ethereum Classic</div>
+        <div class="nameCurs">Monero</div>
+        <div class="nameCurs">Ripple</div>
+        <div class="nameCurs">Litecoin</div>
+        <div class="nameCurs">Dash</div>
+        <div class="nameCurs">Zcash</div>
+        <div class="nameCurs">Dogecoin</div>
+    </div>     
+
+
+
 </div>
 
 <script>
-    const url = "http://3.14.15.74:3000/adminpanel/";
+    const url = "https://www.bizchange24.team/adminpanel/";
 	fetch(url + 'getAllCurrencies', {
 		method: 'POST'
     })
