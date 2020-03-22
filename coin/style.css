@@ -1,0 +1,295 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    width: 100%;
+    height: 60px;
+    background-color: #0B0B0C;
+}
+.menu{
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+}
+.logo{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 45px;
+    margin-top: 8px;
+    margin-left: 30px;
+    flex-basis: 70%;
+}
+.nav{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    margin: auto 0;
+    color: #F7F7F7;
+    padding-right: 20px;
+    text-decoration: none;
+}
+.navMenu{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    flex-basis: 30%;
+}
+.coin{
+    display: flex;
+    flex-wrap: wrap;
+}
+.coinObmen{
+    padding-top: 50px;
+    margin: 0 auto;
+}
+
+
+
+
+
+.select-arrow-3 {
+    position: absolute;
+    z-index: -9999;
+    border: 8px solid transparent;
+    border-bottom: 0;
+    right: 8px;
+}
+.select-arrow-3:nth-child(1) {
+    top: 18px;
+    border-top-color: #202020;
+}
+.select-arrow-3:nth-child(2) {
+    top: 16px;
+    border-top-color: #FFF;
+}
+
+#content {
+    width: 350px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px dotted gray;
+}
+
+.select-wrapper {
+    position: relative;
+    width: 350px;
+    margin: 20px 0;
+    border-bottom: 1px solid #6C7231;
+}
+
+.select-wrapper:hover {
+    box-shadow: 0 0 3px gray;
+}
+
+.select-wrapper select {
+    width: 350px;
+    height: 36px;
+    padding: 0 20px 0 7px;
+    background: transparent;
+    border: 0;
+    appearance: none;            /* remove arrow        */
+    -webkit-appearance: none;    /* remove arrow Chrome */
+    -moz-appearance: none;       /* remove arrow FF     */
+    font-size: 28px;
+    outline:none;
+}
+.select-wrapper select::-ms-expand{
+    display: none;             /* remove arrow IE     */
+}
+
+
+
+
+
+
+
+.submit{
+    display: block;
+    width: 200px;
+    height: 50px;
+    background-color: #232020;
+    border-radius: 50px;
+
+    font-family: Noto Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 49px;
+    color: #F7F7F7;
+
+    margin: 50px auto 0;
+}
+.inp{
+    width: 350px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #0B0B0C;
+    font-size: 22px;
+    outline:none;
+}
+.give{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 54px;
+    line-height: 55px;
+    color: #42BBFF;
+}
+.get{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 54px;
+    line-height: 55px;
+    color: #1acd1e;
+}
+.comment{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 28px;
+    color: #0B0B0C;
+}
+.detal{
+    margin-top: 50px;
+    text-align: center;
+    font-family: Noto Sans, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33px;
+    line-height: 49px;
+    color: #145896;
+}
+.inpEmail{
+    width: 373px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #0B0B0C;
+    font-size: 18px;
+    outline:none;
+}
+.inpkey{
+    width: 300px;
+    height: 32px;
+    border: none;
+    border-bottom: 1px solid #0B0B0C;
+    font-size: 18px;
+    outline:none;
+}
+.form{
+    font-family: Noto Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 50px;
+    color: #202020;
+}
+
+.criptoBlock{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+
+}
+.criptoBlock > div{
+    width: 120px;
+    height: 32px;
+    color: #F7F7F7;
+    background-color: #0B0B0C;
+    border: #145896 solid 1px;
+}
+.bitCripto{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.bitCripto > div{
+    width: 120px;
+    height: 32px;
+    color: #F7F7F7;
+    background-color: #0B0B0C;
+    border: #145896 solid 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+#rez{
+    display: block;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.bitRez{
+    width: 100%;
+    height: 38px;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+}
+.rezCoin{
+    float: right;
+    margin-right: 40px;
+}
+.rezCoin > span{
+    margin-left: 15px;
+}
+
+
+
+/* Страничка контактов */
+
+
+.kon{
+    display: block;
+    margin: 0 auto;
+    max-width: 412px;
+}
+
+/* Страничка контактов */
+.formMargin{
+    margin-top: 20px;
+}
+.formButton{
+    margin: 20px auto 0 auto;
+}
+.formSize{
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+.formFlex{
+    display: flex;
+    flex-direction: row;
+}
+.formInp{
+    width: 200px;
+    height: 18px;
+    float: right;
+    border-radius: 15px;
+    border: 1px solid #0B0B0C;
+    padding-left: 5px;
+    outline:none;
+}
+.formText{
+    width: 260px;
+    height: 200px;
+    float: right;
+    border: 1px solid #0B0B0C;
+    outline:none;
+    padding: 5px;
+}
