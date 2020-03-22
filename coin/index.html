@@ -42,7 +42,7 @@
             </div>
             <label>
                 <input type="number" step="0.001" class="inp" placeholder="0.001" id="inputCripto"
-                       oninput="input(this.value, 'inputCripto', 'select')" onchange="input(this.value, 'inputCripto', 'select')" >
+                       oninput="input(this.value, 'out', 'select', 'myselect')" onchange="input(this.value, 'out', 'select', 'myselect')" >
             </label>
         </div>
         <div class="coinObmen">
@@ -69,7 +69,7 @@
             </div>
             <label>
                 <input type="number" step="0.001" class="inp" placeholder="0.00001" id="out"
-                       oninput="input(this.value, 'out', 'myselect')" onchange="input(this.value, 'out', 'myselect')">
+                       oninput="input(this.value, 'inputCripto', 'myselect', 'select')" onchange="input(this.value, 'inputCriptov', 'myselect', 'select')">
             </label>
         </div>
     </div>
@@ -94,7 +94,7 @@
 <div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
     <div class="criptoBlock formSize">
         <h3>Отдаете</h3>
-        <div class="nameCurs BTC">Bitcoin</div>
+        <div class="BTC nameCurs">Bitcoin</div>
         <div class="nameCurs BTH">Bitcoin Cash</div>
         <div class="nameCurs ETH">Ethereum</div>
         <div class="nameCurs ETC">Ethereum Classic</div>
@@ -273,12 +273,14 @@
 		return document.getElementById(id).options[selind].value;
 	}
 
-	function input(num, va, id) {
+	function input(num, va, id, id2) {
 		data.forEach(elem => {
 			if (elem.currency === sel(id)) {
 				rateFrom = elem.rate;
-			}});
-
+			}
+		    if(elem.currency === sel(id2)){
+		        rateTo = elem.rate;
+            }});
 		document.getElementById(va).value = Number((((num - (num * commision)) / rateFrom) * rateTo).toFixed(6));
 	}
 

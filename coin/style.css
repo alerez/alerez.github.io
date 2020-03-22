@@ -299,7 +299,7 @@ header{
 
 
 .Bitcoin{
-    display: block;
+    display: none;
 }
 .BitcoinCash{
     display: none;
