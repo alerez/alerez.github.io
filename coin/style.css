@@ -5,10 +5,10 @@
 header{
     width: 100%;
     height: 60px;
-    background-color: #0B0B0C;
+    background-color: #145896;
 }
 .menu{
-    color: #ffffff;
+    color: #F7F7F7;
     display: flex;
     flex-direction: row;
 }
@@ -112,7 +112,7 @@ header{
     display: block;
     width: 200px;
     height: 50px;
-    background-color: #232020;
+    background-color: #145896;
     border-radius: 50px;
 
     font-family: Noto Sans, sans-serif;
@@ -123,6 +123,11 @@ header{
     color: #F7F7F7;
 
     margin: 50px auto 0;
+}
+.submit:hover{
+    background-color: #F7F7F7;
+    border: 2px solid #145896;
+    color: #0B0B0C;
 }
 .inp{
     width: 350px;
@@ -138,7 +143,7 @@ header{
     font-weight: normal;
     font-size: 54px;
     line-height: 55px;
-    color: #42BBFF;
+    color: #145896;
 }
 .get{
     font-family: Roboto, sans-serif;
@@ -146,7 +151,7 @@ header{
     font-weight: normal;
     font-size: 54px;
     line-height: 55px;
-    color: #1acd1e;
+    color: #145896;
 }
 .comment{
     font-family: Roboto, sans-serif;
@@ -175,7 +180,7 @@ header{
     outline:none;
 }
 .inpkey{
-    width: 300px;
+    width: 340px;
     height: 32px;
     border: none;
     border-bottom: 1px solid #0B0B0C;
@@ -188,7 +193,7 @@ header{
     font-weight: normal;
     font-size: 20px;
     line-height: 50px;
-    color: #202020;
+    color: #145896;
 }
 
 .criptoBlock{
