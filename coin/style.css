@@ -2,6 +2,9 @@
     padding: 0;
     margin: 0;
 }
+h2, h3 {
+    font-family: Roboto, sans-serif;
+}
 header{
     width: 100%;
     height: 60px;
@@ -196,7 +199,8 @@ header{
 .criptoBlock{
     margin-top: 50px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
 }
 .bitCripto{
     display: flex;
@@ -210,10 +214,34 @@ header{
     text-align: center;
     padding: 16px;
     border: 1px solid #2e2e2e;
+    display: flex;
+    flex-direction: row;
+    transition: color 0.4s, background-color 0.4s;
+}
+.nameCurs p {
+    text-align: left;
+    margin: -5px 0 auto 0;
 }
 .nameCurs:hover{
     background-color: #ffffff;
     color: #0B0B0C;
+}
+.criptoBlock img{
+    width: 35px;
+    height: 35px;
+    margin: -5px 0 0 auto;
+}
+
+#CurrencyTake img{
+    margin: -5px 0 auto 0 !important;
+    padding: 0 5px 0 5px;
+    border-left: solid gray 2px;
+}
+#CurrencyTake .nameCurs{
+    width: 280px;
+}
+.rate {
+    width: 100px;
 }
 
 
@@ -246,8 +274,6 @@ header{
 }
 .rezCoin > span{
     margin-left: 15px;
-
-
 }
 .nameCoin{
     margin: auto 0;
@@ -300,112 +326,3 @@ header{
     padding: 5px;
 }
 
-
-
-.Bitcoin{
-    display: none;
-}
-.BitcoinCash{
-    display: none;
-}
-.Ethereum{
-    display: none;
-}
-.EthereumClassic{
-    display: none;
-}
-.Monero{
-    display: none;
-}
-.Ripple{
-    display: none;
-}
-.Litecoin{
-    display: none;
-}
-.Dash{
-    display: none;
-}
-.Zcash{
-    display: none;
-}
-.Dogecoin{
-    display: none;
-}
-.Stellar{
-    display: none;
-}
-
-
-
-.BTC:hover .Bitcoin{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -66px;
-}
-.BTH:hover .BitcoinCash{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -122px;
-}
-.ETH:hover .Ethereum{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -176px;
-}
-.ETC:hover .EthereumClassic{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -234px;
-}
-.XMR:hover .Monero{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -290px;
-}
-.XRP:hover .Ripple{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -346px;
-}
-.LTC:hover .Litecoin{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -402px;
-}
-.DSH:hover .Dash{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -458px;
-}
-.ZEC:hover .Zcash{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -514px;
-}
-.XDG:hover .Dogecoin{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -569px;
-}
-.XLM:hover .Stellar{
-    display: block;
-    position: absolute;
-    margin-left: 196px;
-    margin-top: -626px;
-}
-
-.imgCripto{
-    width: 35px;
-    height: 35px;
-}

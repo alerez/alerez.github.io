@@ -1,450 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>BizChange24</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-<header>
-    <div class="menu">
-        <span class="logo">BizChange24</span>
-        <div class="navMenu">
-            <a href="index.html" class="nav">Обмен</a>
-            <a href="rez.html" class="nav">Резервы</a>
-            <a href="kon.html" class="nav">Контакты</a>
+    <header>
+        <div class="menu">
+            <span class="logo">BizChange24</span>
+            <div class="navMenu">
+                <a href="index.html" class="nav">Обмен</a>
+                <a href="rez.html" class="nav">Резервы</a>
+                <a href="kon.html" class="nav">Контакты</a>
+            </div>
         </div>
-    </div>
-</header>
-<main>
-    <div class="coin">
-        <div class="coinObmen">
-            <h1 class="give">Отдаете</h1>
-            <h6 class="comment">Выберите валюту и сумму, которую хотите обменять</h6>
-            <div class="select-wrapper">
-                <div class="select-arrow-3"></div>
-                <div class="select-arrow-3"></div>
+    </header>
+    <main>
+        <div class="coin">
+            <div class="coinObmen">
+                <h1 class="give">Отдаете</h1>
+                <h6 class="comment">Выберите валюту и сумму, которую хотите обменять</h6>
+                <div class="select-wrapper">
+                    <div class="select-arrow-3"></div>
+                    <div class="select-arrow-3"></div>
+                    <label>
+                        <select id="select">
+                            <option value="Bitcoin">Bitcoin</option>
+                            <option value="Bitcoin Cash">Bitcoin Cash</option>
+                            <option value="Ethereum">Ethereum</option>
+                            <option value="Ethereum Classic">Ethereum Classic</option>
+                            <option value="Monero">Monero</option>
+                            <option value="Ripple">Ripple</option>
+                            <option value="Litecoin">Litecoin</option>
+                            <option value="Dash">Dash</option>
+                            <option value="Zcash">Zcash</option>
+                            <option value="Dogecoin">Dogecoin</option>
+                            <option value="Stellar">Stellar</option>
+                        </select>
+                    </label>
+                </div>
                 <label>
-                    <select id="select">
-                        <option value="Bitcoin">Bitcoin</option>
-                        <option value="Bitcoin Cash">Bitcoin Cash</option>
-                        <option value="Ethereum">Ethereum</option>
-                        <option value="Ethereum Classic">Ethereum Classic</option>
-                        <option value="Monero">Monero</option>
-                        <option value="Ripple">Ripple</option>
-                        <option value="Litecoin">Litecoin</option>
-                        <option value="Dash">Dash</option>
-                        <option value="Zcash">Zcash</option>
-                        <option value="Dogecoin">Dogecoin</option>
-                        <option value="Stellar">Stellar</option>
-                    </select>
+                    <input type="number" step="0.001" class="inp" required placeholder="0.001" id="inputCripto"
+                        oninput="input(this.value, 'out', 'select', 'myselect')"
+                        onchange="input(this.value, 'out', 'select', 'myselect')">
                 </label>
             </div>
-            <label>
-                <input type="number" step="0.001" class="inp" required placeholder="0.001" id="inputCripto"
-                       oninput="input(this.value, 'out', 'select', 'myselect')" onchange="input(this.value, 'out', 'select', 'myselect')" >
-            </label>
-        </div>
-        <div class="coinObmen">
-            <h1 class="get">Получаете</h1>
-            <h6 class="comment">Выберите валюту для получения</h6>
-            <div class="select-wrapper">
-                <div class="select-arrow-3"></div>
-                <div class="select-arrow-3"></div>
+            <div class="coinObmen">
+                <h1 class="get">Получаете</h1>
+                <h6 class="comment">Выберите валюту для получения</h6>
+                <div class="select-wrapper">
+                    <div class="select-arrow-3"></div>
+                    <div class="select-arrow-3"></div>
+                    <label>
+                        <select id="myselect">
+                            <option value="Bitcoin Cash">Bitcoin Cash</option>
+                            <option value="Bitcoin">Bitcoin</option>
+                            <option value="Ethereum">Ethereum</option>
+                            <option value="Ethereum Classic">Ethereum Classic</option>
+                            <option value="Monero">Monero</option>
+                            <option value="Ripple">Ripple</option>
+                            <option value="Litecoin">Litecoin</option>
+                            <option value="Dash">Dash</option>
+                            <option value="Zcash">Zcash</option>
+                            <option value="Dogecoin">Dogecoin</option>
+                            <option value="Stellar">Stellar</option>
+                        </select>
+                    </label>
+                </div>
                 <label>
-                    <select id="myselect">
-                        <option value="Bitcoin Cash">Bitcoin Cash</option>
-                        <option value="Bitcoin">Bitcoin</option>
-                        <option value="Ethereum">Ethereum</option>
-                        <option value="Ethereum Classic">Ethereum Classic</option>
-                        <option value="Monero">Monero</option>
-                        <option value="Ripple">Ripple</option>
-                        <option value="Litecoin">Litecoin</option>
-                        <option value="Dash">Dash</option>
-                        <option value="Zcash">Zcash</option>
-                        <option value="Dogecoin">Dogecoin</option>
-                        <option value="Stellar">Stellar</option>
-                    </select>
+                    <input type="number" step="0.001" class="inp" required placeholder="0.00001" id="out"
+                        oninput="input(this.value, 'inputCripto', 'myselect', 'select')"
+                        onchange="input(this.value, 'inputCriptov', 'myselect', 'select')">
                 </label>
             </div>
-            <label>
-                <input type="number" step="0.001" class="inp" required placeholder="0.00001" id="out"
-                       oninput="input(this.value, 'inputCripto', 'myselect', 'select')" onchange="input(this.value, 'inputCriptov', 'myselect', 'select')">
-            </label>
         </div>
-    </div>
-    <h1 class="detal">Детали обмена</h1>
-    <div style="display: flex; flex-wrap: wrap; margin-left: 7%; margin-top: 3%">
-        <div class="inputForm">
-            <h6 class="form">Ваш E-mail ящик:</h6>
-            <label>
-                <input type="email"  id="Email" class="inpEmail" required placeholder="Например: name@gmail.com">
-            </label>
+        <h1 class="detal">Детали обмена</h1>
+        <div style="display: flex; flex-wrap: wrap; margin-left: 7%; margin-top: 3%">
+            <div class="inputForm">
+                <h6 class="form">Ваш E-mail ящик:</h6>
+                <label>
+                    <input type="email" id="Email" class="inpEmail" required placeholder="Например: name@gmail.com">
+                </label>
+            </div>
+            <div class="inputForm">
+                <h6 class="form">Кошелёк для получения:</h6>
+                <label>
+                    <input type="text" id="monKey" class="inpkey" required
+                        placeholder="Например: 57hraAvKAqoNSdke84NSIE">
+                </label>
+            </div>
         </div>
-        <div class="inputForm">
-            <h6 class="form">Кошелёк для получения:</h6>
-            <label>
-                <input type="text" id="monKey" class="inpkey" required placeholder="Например: 57hraAvKAqoNSdke84NSIE">
-            </label>
-        </div>
-    </div>
-    <button class="submit" type="submit" onclick="getPost()">ОБМЕНЯТЬ</button>
-</main>
+        <button class="submit" type="submit" onclick="getPost()">ОБМЕНЯТЬ</button>
+    </main>
 
-<div style="display: flex; flex-direction: row; justify-items: center; justify-content: center; flex-basis: 60%">
-    <div class="criptoBlock formSize" style="flex-basis: 40%">
-        <h3 style="margin-left: 70px; margin-bottom: 5px">Отдаете</h3>
-        <div class="BTC nameCurs">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Bitcoin</div>
-                    <div style="margin-left: -15px">BTC</div>
+    <h2 style="text-align: center; margin-top: 40px;">Курс обмена</h2>
+    <div style="display: flex; flex-direction: row; justify-items: center; justify-content: center; flex-basis: 60%">
+        <div class="criptoBlock formSize" style="flex-basis: 40%">
+            <div id="CurrencyGive">
+                <h3 style="margin-left: 70px; margin-bottom: 5px">Отдаете</h3>
+                <div class="nameCurs BTC">
+                    <p>Bitcoin</br>BTC</p>
+                    <img src="images/Bitcoin.png" class="imgCripto">
                 </div>
-                <img src="Bitcoin.png" class="imgCripto" style="margin: -5px 0 0 auto;">
-            </div>
-            <div class="bitCripto formSize Bitcoin">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin Cash</div>
-                <div class="nameCurs">Ethereum</div>
-                <div class="nameCurs">Ethereum Classic</div>
-                <div class="nameCurs">Monero</div>
-                <div class="nameCurs">Ripple</div>
-                <div class="nameCurs">Litecoin</div>
-                <div class="nameCurs">Dash</div>
-                <div class="nameCurs">Zcash</div>
-                <div class="nameCurs">Dogecoin</div>
-                <div class="nameCurs">Stellar</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
-            </div>
-        </div>
-        <div class="nameCurs BTH">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Bitcoin Cash</div>
-                    <div style="margin-left: -50px">BTH</div>
+                <div class=" nameCurs BTH">
+                    <p>Bitcoin Cash</br>BTH</p>
+                    <img src="images/BitcoinCash.png" class="imgCripto">
                 </div>
-                <img src="BitcoinCash.png" class="imgCripto" style="margin: -5px 0 0 auto;">
-            </div>
-            <div class="bitCripto formSize BitcoinCash">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin</div>
-                <div class="nameCurs">Ethereum</div>
-                <div class="nameCurs">Ethereum Classic</div>
-                <div class="nameCurs">Monero</div>
-                <div class="nameCurs">Ripple</div>
-                <div class="nameCurs">Litecoin</div>
-                <div class="nameCurs">Dash</div>
-                <div class="nameCurs">Zcash</div>
-                <div class="nameCurs">Dogecoin</div>
-                <div class="nameCurs">Stellar</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
-            </div>
-        </div>
-        <div class="nameCurs ETH">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Ethereum</div>
-                    <div style="margin-left: -33px">ETH</div>
+                <div class=" nameCurs ETH">
+                    <p>Ethereum</br>ETH</p>
+                    <img src="images/Ethereum.png" class="imgCripto">
                 </div>
-                <img src="Ethereum.png" style="width: 20px; margin: -5px 8px 0 auto;">
-            </div>
-            <div class="bitCripto formSize Ethereum">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin</div>
-                <div class="nameCurs">Bitcoin Cash</div>
-                <div class="nameCurs">Ethereum Classic</div>
-                <div class="nameCurs">Monero</div>
-                <div class="nameCurs">Ripple</div>
-                <div class="nameCurs">Litecoin</div>
-                <div class="nameCurs">Dash</div>
-                <div class="nameCurs">Zcash</div>
-                <div class="nameCurs">Dogecoin</div>
-                <div class="nameCurs">Stellar</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
-            </div>
-        </div>
-        <div class="nameCurs ETC">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Ethereum Classic</div>
-                    <div style="margin-left: -82px">ETC</div>
+                <div class="nameCurs ETC">
+                    <p>Ethereum Classic</br>ETC</p>
+                    <img src="images/EthereumClassic.svg" class="imgCripto">
                 </div>
-                <img src="EthereumClassic.svg" class="imgCripto" style="margin: -5px 0 0 auto;">
-            </div>
-            <div class="bitCripto formSize EthereumClassic">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin</div>
-                <div class="nameCurs">Bitcoin Cash</div>
-                <div class="nameCurs">Ethereum</div>
-                <div class="nameCurs">Monero</div>
-                <div class="nameCurs">Ripple</div>
-                <div class="nameCurs">Litecoin</div>
-                <div class="nameCurs">Dash</div>
-                <div class="nameCurs">Zcash</div>
-                <div class="nameCurs">Dogecoin</div>
-                <div class="nameCurs">Stellar</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
-            </div>
-        </div>
-        <div class="nameCurs XMR">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Monero</div>
-                    <div style="margin-left: -15px">XMR</div>
+                <div class=" nameCurs XMR">
+                    <p>Monero</br>XMR</p>
+                    <img src="images/monero.png" class="imgCripto"
+                        style="background-color: #F7F7F7; border-radius: 25px">
                 </div>
-                <img src="monero.png" class="imgCripto" style="margin: -5px 0 0 auto; background-color: #F7F7F7; border-radius: 25px">
-            </div>
-            <div class="bitCripto formSize Monero">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin</div>
-                <div class="nameCurs">Bitcoin Cash</div>
-                <div class="nameCurs">Ethereum</div>
-                <div class="nameCurs">Ethereum Classic</div>
-                <div class="nameCurs">Ripple</div>
-                <div class="nameCurs">Litecoin</div>
-                <div class="nameCurs">Dash</div>
-                <div class="nameCurs">Zcash</div>
-                <div class="nameCurs">Dogecoin</div>
-                <div class="nameCurs">Stellar</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
-            </div>
-        </div>
-        <div class="nameCurs XRP">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Ripple</div>
-                    <div style="margin-left: -10px">XRP</div>
+                <div class="nameCurs XRP">
+                    <p>Ripple</br>XRP</p>
+                    <img src="images/Ripple.png" class="imgCripto">
                 </div>
-                <img src="Ripple.png" class="imgCripto" style="margin: -5px 0 0 auto;">
-            </div>
-            <div class="bitCripto formSize Ripple">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin</div>
-                <div class="nameCurs">Bitcoin Cash</div>
-                <div class="nameCurs">Ethereum</div>
-                <div class="nameCurs">Ethereum Classic</div>
-                <div class="nameCurs">Monero</div>
-                <div class="nameCurs">Litecoin</div>
-                <div class="nameCurs">Dash</div>
-                <div class="nameCurs">Zcash</div>
-                <div class="nameCurs">Dogecoin</div>
-                <div class="nameCurs">Stellar</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
-            </div>
-        </div>
-        <div class="nameCurs LTC">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Litecoin</div>
-                    <div style="margin-left: -22px">LTC</div>
+                <div class=" nameCurs LTC">
+                    <p>Litecoin</br>LTC</p>
+                    <img src="images/Litecoin.png" class="imgCripto">
                 </div>
-                <img src="Litecoin.png" class="imgCripto" style="margin: -5px 0 0 auto;">
-            </div>
-            <div class="bitCripto formSize Litecoin">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin</div>
-                <div class="nameCurs">Bitcoin Cash</div>
-                <div class="nameCurs">Ethereum</div>
-                <div class="nameCurs">Ethereum Classic</div>
-                <div class="nameCurs">Monero</div>
-                <div class="nameCurs">Ripple</div>
-                <div class="nameCurs">Dash</div>
-                <div class="nameCurs">Zcash</div>
-                <div class="nameCurs">Dogecoin</div>
-                <div class="nameCurs">Stellar</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
-            </div>
-        </div>
-        <div class="nameCurs DSH">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Dash</div>
-                    <div style="margin-left: -2px">DSH</div>
+                <div class=" nameCurs DSH">
+                    <p>Dash</br>DSH</p>
+                    <img src="images/Dash.png" class="imgCripto">
                 </div>
-                <img src="Dash.png" class="imgCripto" style="margin: -5px 0 0 auto;">
-            </div>
-            <div class="bitCripto formSize Dash">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin</div>
-                <div class="nameCurs">Bitcoin Cash</div>
-                <div class="nameCurs">Ethereum</div>
-                <div class="nameCurs">Ethereum Classic</div>
-                <div class="nameCurs">Monero</div>
-                <div class="nameCurs">Ripple</div>
-                <div class="nameCurs">Litecoin</div>
-                <div class="nameCurs">Zcash</div>
-                <div class="nameCurs">Dogecoin</div>
-                <div class="nameCurs">Stellar</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
-            </div>
-        </div>
-        <div class="nameCurs ZEC">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Zcash</div>
-                    <div style="margin-left: -10px">ZEC</div>
+                <div class=" nameCurs ZEC">
+                    <p>Zcash</br>ZEC</p>
+                    <img src="images/zcash.png" class="imgCripto">
                 </div>
-                <img src="zcash.png" class="imgCripto" style="margin: -5px 0 0 auto;">
-            </div>
-            <div class="bitCripto formSize Zcash">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin</div>
-                <div class="nameCurs">Bitcoin Cash</div>
-                <div class="nameCurs">Ethereum</div>
-                <div class="nameCurs">Ethereum Classic</div>
-                <div class="nameCurs">Monero</div>
-                <div class="nameCurs">Ripple</div>
-                <div class="nameCurs">Litecoin</div>
-                <div class="nameCurs">Dash</div>
-                <div class="nameCurs">Dogecoin</div>
-                <div class="nameCurs">Stellar</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
-            </div>
-        </div>
-        <div class="nameCurs XDG">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Dogecoin</div>
-                    <div style="margin-left: -28px">XDG</div>
+                <div class="nameCurs XDG">
+                    <p>Dogecoin</br>XDG</p>
+                    <img src="images/dogecoin.png" class="imgCripto">
                 </div>
-                <img src="dogecoin.png" style="margin: -5px 0 0 auto; width: 45px">
-            </div>
-            <div class="bitCripto formSize Dogecoin">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin</div>
-                <div class="nameCurs">Bitcoin Cash</div>
-                <div class="nameCurs">Ethereum</div>
-                <div class="nameCurs">Ethereum Classic</div>
-                <div class="nameCurs">Monero</div>
-                <div class="nameCurs">Ripple</div>
-                <div class="nameCurs">Litecoin</div>
-                <div class="nameCurs">Dash</div>
-                <div class="nameCurs">Zcash</div>
-                <div class="nameCurs">Stellar</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
-            </div>
-        </div>
-        <div class="nameCurs XLM">
-            <div style="display: flex; flex-direction: row">
-                <div style="margin: -5px 0 auto 0;">
-                    <div>Stellar</div>
-                    <div style="margin-left: -10px">XML</div>
+                <div class="nameCurs XLM">
+                    <p>Stellar</br>XML</p>
+                    <img src="images/stellar.png" class="imgCripto">
                 </div>
-                <img src="stellar.png" class="imgCripto" style="margin: -5px 0 0 auto;">
             </div>
-            <div class="bitCripto formSize Stellar">
-                <h3>Получаете</h3>
-                <div class="nameCurs">Bitcoin</div>
-                <div class="nameCurs">Bitcoin Cash</div>
-                <div class="nameCurs">Ethereum</div>
-                <div class="nameCurs">Ethereum Classic</div>
-                <div class="nameCurs">Monero</div>
-                <div class="nameCurs">Ripple</div>
-                <div class="nameCurs">Litecoin</div>
-                <div class="nameCurs">Dash</div>
-                <div class="nameCurs">Zcash</div>
-                <div class="nameCurs">Dogecoin</div>
-                <div class="nameCurs">USD</div>
-                <div class="nameCurs">UAH</div>
-                <div class="nameCurs">RUB</div>
+            <div id="CurrencyTake">
+                <h3 style="margin-left: 70px; margin-bottom: 5px">Получаете</h3>
+                <div class="nameCurs BTC">
+                    <p class="rate">00.00</p>
+                    <img src="images/Bitcoin.png" class="imgCripto">
+                    <p>Bitcoin</br>BTC</p>
+                </div>
+                <div class=" nameCurs BTH">
+                    <p class="rate">00.00</p>
+                    <img src="images/BitcoinCash.png" class="imgCripto">
+                    <p>Bitcoin Cash</br>BTH</p>
+                </div>
+                <div class=" nameCurs ETH">
+                    <p class="rate">00.00</p>
+                    <img src="images/Ethereum.png" class="imgCripto">
+                    <p>Ethereum</br>ETH</p>
+                </div>
+                <div class="nameCurs ETC">
+                    <p class="rate">00.00</p>
+                    <img src="images/EthereumClassic.svg" class="imgCripto">
+                    <p>Ethereum Classic</br>ETC</p>
+                </div>
+                <div class=" nameCurs XMR">
+                    <p class="rate">00.00</p>
+                    <img src="images/monero.png" class="imgCripto" background-color: #F7F7F7; border-radius: 25px">
+                    <p>Monero</br>XMR</p>
+                </div>
+                <div class="nameCurs XRP">
+                    <p class="rate">00.00</p>
+                    <img src="images/Ripple.png" class="imgCripto">
+                    <p>Ripple</br>XRP</p>
+                </div>
+                <div class=" nameCurs LTC">
+                    <p class="rate">00.00</p>
+                    <img src="images/Litecoin.png" class="imgCripto">
+                    <p>Litecoin</br>LTC</p>
+                </div>
+                <div class=" nameCurs DSH">
+                    <p class="rate">00.00</p>
+                    <img src="images/Dash.png" class="imgCripto">
+                    <p>Dash</br>DSH</p>
+                </div>
+                <div class=" nameCurs ZEC">
+                    <p class="rate">00.00</p>
+                    <img src="images/zcash.png" class="imgCripto">
+                    <p>Zcash</br>ZEC</p>
+                </div>
+                <div class="nameCurs XDG">
+                    <p class="rate">00.00</p>
+                    <img src="images/dogecoin.png" class="imgCripto">
+                    <p>Dogecoin</br>XDG</p>
+                </div>
+                <div class="nameCurs XLM">
+                    <p class="rate">00.00</p>
+                    <img src="images/stellar.png" class="imgCripto">
+                    <p>Stellar</br>XML</p>
+                </div>
             </div>
         </div>
     </div>
+    <div style="display: flex; flex-wrap: wrap; justify-items: left; justify-content: right;">
+        <h1>Отзывы</h1>
+    </div>
 
+    <div style="height: 400px">
 
+    </div>
 
+    <script>
+        var data;
+        const url = "https://www.bizchange24.team";
 
-</div>
-<div style="display: flex; flex-wrap: wrap; justify-items: left; justify-content: right;">
-    <h1>Отзывы</h1>
-</div>
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
 
-<div style="height: 400px">
+        var raw = JSON.stringify({ "login": "api", "password": "T5rEZQ5Q" });
 
-</div>
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
 
-<script>
-    const url = "https://www.bizchange24.team/adminpanel/";
-	fetch(url + 'getAllCurrencies', {
-		method: 'POST'
-    })
-		.then(res => res.json())
-		.then((response) => {
-			data = response
-		});
-	let data;
-	let rateFrom;
-	let rateTo;
-	const commision = 0.0025;
-    let numberInp;
-    let numberOut;
+        fetch(url + "/signin", requestOptions)
+            .then(response => response.json())
+            .then(result => console.log('API logged in'))
+            .catch(error => console.log('error', error));
 
-    function rel() {
-        input(numberOut, 'out', 'select', 'select')
-	}
-	function rel2() {
-		input(numberInp, 'inputCripto', 'myselect', 'select')
-	}
-	function sel(id) {
-        let selind = document.getElementById(id).options.selectedIndex;
-		return document.getElementById(id).options[selind].value;
-	}
-	function input(num, va, id, id2) {
-		data.forEach(elem => {
-			if (elem.currency === sel(id)) {
-				rateFrom = elem.rate;
-			}
-		    if(elem.currency === sel(id2)){
-		        rateTo = elem.rate;
-            }});
-		if(va === 'inputCripto'){
-			numberInp = Number((((num - (num * commision)) / rateFrom) * rateTo).toFixed(6));
+        function getAllCurrencies() {
+            fetch(url + '/getAllCurrencies', { method: 'POST' }
+            ).then(res => res.json())
+                .then((response) => {
+                    data = response
+                });
         }
-		if(va === 'out'){
-			numberOut = Number((((num - (num * commision)) / rateFrom) * rateTo).toFixed(6));
-		}
-		document.getElementById(va).value = Number((((num - (num * commision)) / rateFrom) * rateTo).toFixed(6));
-	}
-	function getPost() {
-		let request = JSON.stringify(
-			                    {
-                                    from: sel('select'),
-                                    to: sel('myselect'),
-                                    howMFrom: document.getElementById('inputCripto').value,
-                                    howMTo: document.getElementById('out').value,
-                                    email: document.getElementById('Email').value,
-                                    wallet: document.getElementById('monKey').value
-			                    });
-		fetch(url + 'addTransaction', {
-			method: 'POST',
-            body: request
-		})
-			.then(res => res.json())
-			.then((response) => {
-				data = response
-			});
-	}
 
-</script>
+        function viewCurrency(from) {
+            let fromRate = 0;
+            let toRate = 0;
+            data.forEach(element => {
+                if (element.currency == from) {
+                    fromRate = element.rate;
+                    return;
+                }
+            });
+            data.forEach(element => {
+                let result = (1 / fromRate) * element.rate;
+                document.querySelector("#CurrencyTake ." + elment.currencyCode + " .rate").innerHTML = result;
+            });
+        }
+        setTimeout(getAllCurrencies, 5000);
+
+        document.querySelector(".CurrencyGive .nameCurs").forEach(element => {
+            element.onckick = function (e) {
+                viewCurrency(String(element.innerHTML).substring(2, String(element.innerHTML).indexOf("</p>")));
+                console.log("CURRENCY:" + String(element.innerHTML).substring(2, String(element.innerHTML).indexOf("</p>")));
+            }
+            console.log("CURRENCY:" + String(element.innerHTML).substring(2, String(element.innerHTML).indexOf("</p>")));
+        });
+
+        let rateFrom;
+        let rateTo;
+        const commision = 0.0025;
+        let numberInp;
+        let numberOut;
+
+        function rel() {
+            input(numberOut, 'out', 'select', 'select')
+        }
+        function rel2() {
+            input(numberInp, 'inputCripto', 'myselect', 'select')
+        }
+        function sel(id) {
+            let selind = document.getElementById(id).options.selectedIndex;
+            return document.getElementById(id).options[selind].value;
+        }
+        function input(num, va, id, id2) {
+            data.forEach(elem => {
+                if (elem.currency === sel(id)) {
+                    rateFrom = elem.rate;
+                }
+                if (elem.currency === sel(id2)) {
+                    rateTo = elem.rate;
+                }
+            });
+            if (va === 'inputCripto') {
+                numberInp = Number((((num - (num * commision)) / rateFrom) * rateTo).toFixed(6));
+            }
+            if (va === 'out') {
+                numberOut = Number((((num - (num * commision)) / rateFrom) * rateTo).toFixed(6));
+            }
+            document.getElementById(va).value = Number((((num - (num * commision)) / rateFrom) * rateTo).toFixed(6));
+        }
+        function getPost() {
+            let request = JSON.stringify(
+                {
+                    from: sel('select'),
+                    to: sel('myselect'),
+                    howMFrom: document.getElementById('inputCripto').value,
+                    howMTo: document.getElementById('out').value,
+                    email: document.getElementById('Email').value,
+                    wallet: document.getElementById('monKey').value
+                });
+            fetch(url + 'addTransaction', {
+                method: 'POST',
+                body: request
+            })
+                .then(res => res.json())
+                .then((response) => {
+                    data = response
+                });
+        }
+
+    </script>
 </body>
+
 </html>
