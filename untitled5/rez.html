@@ -144,7 +144,7 @@
                     <span class="nameCoin">Bitcoin</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="BTC"><span>BTC</span></span>
+                    <span class="rezCoin" id="BTC">000<span>BTC</span></span>
                 </div>
             </div>
             <div class="rezFlex">
@@ -155,7 +155,7 @@
                     <span class="nameCoin">Bitcoin Cash</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="BTH"><span>BTH</span></span>
+                    <span class="rezCoin" id="BTH">000<span>BTH</span></span>
                 </div>
             </div>
             <div class="rezFlex">
@@ -166,7 +166,7 @@
                     <span class="nameCoin">Ethereum</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="ETH"><span>ETH</span></span>
+                    <span class="rezCoin" id="ETH">000<span>ETH</span></span>
                 </div>
             </div>
             <div class="rezFlex">
@@ -177,7 +177,7 @@
                     <span class="nameCoin">Ethereum Classic</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="ETC"><span>ETC</span></span>
+                    <span class="rezCoin" id="ETC">000<span>ETC</span></span>
                 </div>
             </div>
             <div class="rezFlex">
@@ -188,7 +188,7 @@
                     <span class="nameCoin">Monero</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="XMR"><span>XMR</span></span>
+                    <span class="rezCoin" id="XMR">000<span>XMR</span></span>
                 </div>
             </div>
             <div class="rezFlex">
@@ -199,7 +199,7 @@
                     <span class="nameCoin">Ripple</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="XRP"><span>XRP</span></span>
+                    <span class="rezCoin" id="XRP">000<span>XRP</span></span>
                 </div>
             </div>
             <div class="rezFlex">
@@ -210,7 +210,7 @@
                     <span class="nameCoin">Litecoin</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="LTC"><span>LTC</span></span>
+                    <span class="rezCoin" id="LTC">000<span>LTC</span></span>
                 </div>
             </div>
             <div class="rezFlex">
@@ -221,7 +221,7 @@
                     <span class="nameCoin">Dash</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="DSH"><span>DSH</span></span>
+                    <span class="rezCoin" id="DSH">000<span>DSH</span></span>
                 </div>
             </div>
             <div class="rezFlex">
@@ -232,7 +232,7 @@
                     <span class="nameCoin">Zcash</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="ZEC"><span>ZEC</span></span>
+                    <span class="rezCoin" id="ZEC">000<span>ZEC</span></span>
                 </div>
             </div>
             <div class="rezFlex">
@@ -243,7 +243,7 @@
                     <span class="nameCoin">Dogecoin</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="XDG"><span>XDG</span></span>
+                    <span class="rezCoin" id="XDG">000<span>XDG</span></span>
                 </div>
             </div>
             <div class="rezFlex">
@@ -254,51 +254,51 @@
                     <span class="nameCoin">Stellar</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="XLM"><span>XLM</span></span>
+                    <span class="rezCoin" id="XLM">000<span>XLM</span></span>
                 </div>
             </div>
             <div class="rezFlex">
                 <div>
-                    <img src="./coin/stellar.png">
+                    <img src="./coin/mono.png">
                 </div>
                 <div class="basik">
                     <span class="nameCoin">MonoBank</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="MONO"><span>UAH</span></span>
+                    <span class="rezCoin" id="MONO">000<span>UAH</span></span>
                 </div>
             </div>
             <div class="rezFlex">
                 <div>
-                    <img src="./coin/stellar.png">
+                    <img src="./coin/PB.png">
                 </div>
                 <div class="basik">
                     <span class="nameCoin">ПриватБанк</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="MC"><span>UAH</span></span>
+                    <span class="rezCoin" id="MC">000<span>UAH</span></span>
                 </div>
             </div>
             <div class="rezFlex">
                 <div>
-                    <img src="./coin/stellar.png">
+                    <img src="./coin/SB.png">
                 </div>
                 <div class="basik">
                     <span class="nameCoin">СберБанк</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="PB"><span>RUB</span></span>
+                    <span class="rezCoin" id="PB">000<span>RUB</span></span>
                 </div>
             </div>
             <div class="rezFlex">
                 <div>
-                    <img src="./coin/stellar.png">
+                    <img src="./coin/visa.png">
                 </div>
                 <div class="basik">
                     <span class="nameCoin">Visa/MasterCard</span>
                 </div>
                 <div>
-                    <span class="rezCoin" id="VISA"><span>USD</span></span>
+                    <span class="rezCoin" id="VISA">000<span>USD</span></span>
                 </div>
             </div>
         </div>
@@ -351,8 +351,7 @@
 				data = response.data;
 				tokens = response.tokens;
 				data.forEach(element => {
-					document.getElementById(element.currencyCode).innerHTML =
-						element.reserve + "<span>" + element.currencyCode + "</span>";
+					document.getElementById(element.currencyCode).innerHTML.replace("000", element.reserve);
 				});
 			});
 	}
