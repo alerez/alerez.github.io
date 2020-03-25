@@ -101,7 +101,7 @@
         appearance: none;            /* remove arrow        */
         -webkit-appearance: none;    /* remove arrow Chrome */
         -moz-appearance: none;       /* remove arrow FF     */
-        font-size: 28px;
+        font-size: 26px;
         outline:none;
     }
     .select-wrapper select::-ms-expand{
@@ -206,6 +206,9 @@
         transition: color 0.4s, background-color 0.4s, border 0.5s;
 
         border-top: 1px solid #b9b9b9;
+    }
+    .cryptoBlock td.empty {
+		border-top: none !important;
     }
     .cryptoBlock td span {
         overflow-x: hidden;
@@ -429,7 +432,7 @@
                                 <option value="Monobank UAH">MonoBank UAH</option>
                                 <option value="Mastercard">PrivatBank UAH</option>
                                 <option value="Сбербанк RUB">СберБанк RUB</option>
-                                <option value="Visa">VISA/MasterCard</option>
+                                <option value="Visa">VISA/MasterCard (USD)</option>
                             </select>
                         </label>
                     </div>
@@ -624,50 +627,50 @@
             </tr>
 	    <tr>
                 <!--Mono UAH-->
-                <td>
+                <td class="empty">
                 </td>
                 <td class="MONO rate">
                     00.00
                 </td>
                 <td class="CurrencyDisplay">
                     <img src="./coin/mono.png">
-                    <p><span>Monobank UAH</span><br/>UAH</p>
+                    <p><span>Monobank</span><br/>UAH</p>
                 </td>
             </tr>
 	    <tr>
                 <!--Pryvat UAH-->
-                <td>
+                <td class="empty">
                 </td>
                 <td class="PB rate">
                     00.00
                 </td>
                 <td class="CurrencyDisplay">
                     <img src="./coin/PB.png">
-                    <p><span>Приват Банк UAH</span><br/>UAH</p>
+                    <p><span>Приват Банк</span><br/>UAH</p>
                 </td>
             </tr>
 	    <tr>
                 <!--Visa (USD)-->
-                <td>
+                <td class="empty">
                 </td>
                 <td class="VISA rate">
                     00.00
                 </td>
                 <td class="CurrencyDisplay">
                     <img src="./coin/visa.png">
-                    <p><span>Visa/Mastercard USD</span><br/>USD</p>
+                    <p><span>Visa/Mastercard</span><br/>USD</p>
                 </td>
             </tr>
 	    <tr>
                 <!--Sber (RUB)-->
-                <td>
+                <td class="empty">
                 </td>
                 <td class="SBER rate">
                     00.00
                 </td>
                 <td class="CurrencyDisplay">
                     <img src="./coin/SB.png">
-                    <p><span>Сбербанк RUB</span><br/>RUB</p>
+                    <p><span>Сбербанк</span><br/>RUB</p>
                 </td>
             </tr>
         </table>
