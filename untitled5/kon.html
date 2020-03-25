@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>BizChange24</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<header>
+    <div class="menu">
+        <span class="logo">BizChange24</span>
+        <div class="navMenu">
+            <a href="index.html" class="nav">Обмен</a>
+            <a href="rez.html" class="nav">Резервы</a>
+            <a href="kon.html" class="nav">Контакты</a>
+        </div>
+    </div>
+</header>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .kon{
+        display: block;
+        margin: 0 auto;
+        max-width: 412px;
+        font-family: Roboto, sans-serif;
+    }
+    .formSize{
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    /* Страничка контактов */
+    .formMargin{
+        margin-top: 20px;
+    }
+    .formButton{
+        margin: 20px auto 0 auto;
+    }
+    .formFlex{
+        display: flex;
+        flex-direction: row;
+    }
+    .formInp{
+        width: 210px;
+        height: 18px;
+        float: right;
+        border: 1px solid #0B0B0C;
+        outline:none;
+        padding: 3px;
+        margin-top: -6px;
+        font-size: 16px;
+    }
+    .formText{
+        width: 240px;
+        height: 200px;
+        float: right;
+        border: 1px solid #0B0B0C;
+        outline:none;
+        padding: 5px;
+        font-size: 16px;
+    }
+    button{
+        width: 200px;
+        height: 38px;
+        font-size: 26px;
+        background-color: #145896;
+        color: #ececec;
+        float: right;
+        margin-right: 35px;
+        margin-top: 40px;
+    }
+    textarea{
+        margin-bottom: 60px;
+    }
+    header{
+        width: 100%;
+        height: 60px;
+        background-color: #145896;
+        overflow: hidden;
+    }
+    .menu{
+        color: #F7F7F7;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .logo{
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 45px;
+        margin-top: 8px;
+        margin-left: 30px;
+    }
+    .navMenu .nav{
+        font-family: Roboto, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 27px;
+        margin: auto 0;
+        color: #F7F7F7;
+        padding-right: 20px;
+        text-decoration: none;
+    }
+    .navMenu{
+        display: flex;
+        flex-direction: row;
+        margin-top: 10px;
+    }
+    .ret{
+        margin-top: -40px;
+    }
+    @media only screen and (max-width: 600px)
+    {
+        header {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            transition: height 0.3s;
+        }
+        header:focus-within, header:hover {
+            height: fit-content;
+        }
+        .navMenu {
+            flex-direction: column;
+            flex-basis: 100%;
+        }
+        .menu {
+            flex-direction: column;
+        }
+        .logo {
+            flex-basis: 100%;
+        }
+        .navMenu .nav {
+            width: 100%;
+            flex-basis: 100%;
+            font-size: 160%;
+            margin: 0;
+            text-align: center;
+            display: inline-block;
+            padding-right: 0;
+        }
+        .ret{
+            margin-top: -40px;
+        }
+    }
+    @media only screen and (max-width: 400px) {
+        .ret{
+            margin-top: 0px;
+        }
+
+    }
+</style>
+<div id="app">
+    <div class="kon">
+        <div>
+            <h1 class="formSize formMargin" style="text-align: center; font-size: 32px">{{Feedback}}</h1>
+            <p class="formMargin formSize">{{text}}</p>
+            <div class="formMargin">
+                <div class="formFlex">
+                    <img src="./contact/email.png" style="width: 35px"><span class="formSize">{{email}}</span>
+                </div>
+                <div class="formFlex">
+                    <img src="./contact/telegramLogo.png" style="width: 35px"><span class="formSize">{{phone}}</span>
+                </div>
+                <div class="formFlex">
+                    <img src="./contact/viber.png" style="width: 35px"><span class="formSize">{{phone}}</span>
+                </div>
+                <div class="formFlex">
+                    <img src="./contact/whatsapp.png" style="width: 35px"><span class="formSize">{{phone}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="formEmail formMargin" style="display: flex; flex-direction: column; padding: 5px">
+            <p class="formSize">{{text1}}</p>
+            <span style="margin-top: 20px">{{box}}</span>
+            <label class="formMargin formSize">
+                <input class="formSize formInp ret" required type="email" id="fromEmail">
+            </label>
+            <span>{{messa}}</span>
+            <label class="formMargin formSize">
+                <input class="formSize formInp ret" required type="text" id="fromSubject">
+            </label>
+            <label class="formMargin formSize">
+                <span>{{messaT}}</span>
+                <textarea class="formText" required name="text" id="fromText"></textarea>
+            </label>
+            <button class="formButton formSize ret" @click="getPost()">{{sub}}</button>
+        </div>
+    </div>
+    <div style="background-color: #145896; width: 100%; height: 62px; margin-top: 50px ">
+
+    </div>
+</div>
+<script>
+	const myHeaders = new Headers();
+	myHeaders.append("Content-Type", "application/json");
+
+	const raw = JSON.stringify({"login": "api", "password": "T5rEZQ5Q"});
+
+	const requestOptions = {
+		method: 'POST',
+		headers: myHeaders,
+		body: raw,
+		redirect: 'follow'
+	};
+	const url = "https://www.bizchange24.team";
+
+	let tokens;
+
+
+	let vue = new Vue({
+		el: '#app',
+		name: "cont",
+		data: {
+				Feedback: 'Обратная связь',
+
+				text: 'Если у вас возникли какие-либо вопросы, или вы хотите что-нибудь нам\n сообщить - пожалуйста, обратитесь по одному из указанных ниже контактов.',
+
+				text1: 'Или воспользуйтесь нашей формой обратной связи.\n Мы обязательно свяжемся с вами в самое ближайшее время.',
+
+				box: 'Ваш Email для ответа:',
+				messa: 'Тема сообщения:',
+				messaT: 'Текст сообщения:',
+
+				sub: 'Отправить',
+
+				phone: '+38-098-210-09-63',
+				email: 'support@d-obmen.cc',
+		},
+		methods: {
+			loginAPI: async function() {
+				await fetch(url + "/signin", requestOptions)
+					.then(response => response.json())
+					.then(result => {
+							console.log('API logged in');
+							tokens = result.tokens;
+						}
+					)
+					.catch(error => console.log('error', error));
+			},
+			getAllCurrencies: async function() {
+				await this.loginAPI();
+				await fetch(url + '/getAllCurrencies',
+					{
+						method: 'POST',
+						headers: myHeaders,
+						redirect: 'follow',
+						body: JSON.stringify({tokens})
+					}
+				).then(res => res.json())
+					.then((response) => {
+						this.data = response.data;
+						tokens = response.tokens;
+					});
+			},
+			getPost: function() {
+				let request = JSON.stringify({
+					from: document.getElementById('fromEmail').value,
+					subject: document.getElementById('fromSubject').value,
+					body: document.getElementById('fromText').value,
+					tokens,
+				});
+				fetch(url + '/sendMail', {
+					method: 'POST',
+					body: request
+				})
+					.then(res => res.json())
+					.then((response) => {
+						this.data = response;
+						tokens = response.tokens;
+					});
+			}
+		},
+		mounted(){
+			this.getAllCurrencies();
+		}
+	})
+</script>
+</body>
+</html>
