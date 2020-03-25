@@ -351,7 +351,8 @@
 				data = response.data;
 				tokens = response.tokens;
 				data.forEach(element => {
-					document.getElementById(element.currencyCode).innerHTML.replace("000", element.reserve);
+					if (document.getElementById(element.currencyCode))
+					    document.getElementById(element.currencyCode).innerHTML = element.reserve + document.getElementById(element.currencyCode).innerHTML.substring(3);
 				});
 			});
 	}
