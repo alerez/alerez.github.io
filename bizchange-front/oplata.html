@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>YoLoChange24</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" href="./coin/bitcoinICON.ico" type="image/x-icon">
+    <meta http-equiv="Cache-Control" content="no-cache">
+</head>
+
+<body onclick>
+    <header  ontouchmove>
+        <div class="menu">
+            <span class="logo">YoLoChange24</span>
+            <div class="navMenu">
+                <a href="index.html" class="nav">Обмен</a>
+                <a href="rez.html" class="nav">Резервы</a>
+                <a href="kon.html" class="nav">Контакты</a>
+            </div>
+        </div>
+    </header>
+    <div style="max-width: 500px; margin: 0 auto; margin-top: 30px; padding: 16px" class="box" id="confirmBox">
+        <h1 style="text-align: center; margin-top: 20px; font-weight: bold">Заявка</h1>
+        <h4 style="text-align: center; margin-top: 10px; font-weight: normal">Пожалуйста, проверьте введенные Вами
+            данные и следуйте инструкции ниже.</h4>
+        <table>
+            <tr>
+                <th>
+                    <h3>Перевод с:</h3>
+                </th>
+                <td>
+                    <span style="margin-top: 23px; margin-left: 10px" id="otdSkol"></span>
+                    <span style="margin-top: 23px; margin-left: 10px" id="otd"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <h3>В:</h3>
+                </th>
+                <td>
+                    <span style="margin-top: 3px; margin-left: 10px" id="polSkol"></span>
+                    <span style="margin-top: 3px; margin-left: 10px" id="pol"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <h3>На счет/карту:</h3>
+                </th>
+                <td>
+                    <span id="wall" style="margin-left: 10px; color: slateblue; width: 200px"></span>
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <h2 style="text-align: center; font-weight: normal">Для завершения перевода:</h2>
+        <div>
+            <span class="text">1. Выполните платеж по реквизитам:</span>
+        </div>
+        <div>
+            <div style="margin-left: 10px">
+                <span class="text">Номер кошелька:</span>
+                <br>
+                <textarea readonly id="perNa2" style="color: slateblue"></textarea>
+                <!----><input value="скопировать" type="button" onclick="copyText('perNa2');">
+
+                <br>
+                <span class="text">Сумма: </span><span id="otd2"></span>
+                <br>
+                <textarea readonly id="otdSkol2"></textarea>
+                <!----><input value="скопировать" type="button" onclick="copyText('otdSkol2');">
+            </div>
+        </div>
+        <div>
+            <span class="text">2. Нажмите "Подтвердить":</span>
+        </div>
+        <div>
+            <span class="text">3. Ожидайте обработки заявки</span>
+        </div>
+    </div>
+
+    <div style="text-align: center;">
+        <button type="submit" onclick="window.location='index.html';"
+            style="background-color: #c42323; display: inline-block;">
+            Отменить</button>
+        <button type="submit" onclick="getPost()" style="background-color: #34a725; display: inline-block;">
+            Подтвердить</button>
+    </div>
+
+    <div style="margin: 10px">
+        <p>В случае возникновения вопросов или проблем свяжитесь с нами на <a href="kon.html">странице контактов</a></p>
+    </div>
+
+    <div style="background-color: #1F4569; width: 100%; height: 62px; margin-top: 50px ">
+
+    </div>
+    <style>
+        .text {
+            font-weight: normal;
+        }
+
+        #confirmBox span:not(.text) {
+            color: rgb(97, 97, 97);
+        }
+
+        .box {
+            border-radius: 5px;
+            box-shadow: 0px 1px 3px gray;
+            padding: 20px;
+        }
+
+        .box * {
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        tr>* {
+            padding-top: 5px;
+        }
+
+        th {
+            text-align: end;
+        }
+
+        th h3 {
+            margin-top: 0px !important;
+            font-weight: normal;
+        }
+
+        input[type="button"] {
+            padding: 5px;
+            margin: 5px;
+            border-radius: 4px;
+            box-shadow: 0px 0px 1px rgb(100, 100, 100);
+            background-color: #145896;
+            color: white;
+            transition: 0.3s;
+            font-size: 16px;
+            border: none;
+        }
+
+        input[type="button"]:hover {
+            box-shadow: 0px 0px 5px rgb(100, 100, 100);
+        }
+
+        hr {
+            border: solid transparent 1px;
+            background-color: rgb(92, 92, 92);
+        }
+
+        textarea {
+            height: 25px;
+            resize: none;
+            word-break: break-all;
+            width: 90%;
+            border: none;
+            font-size: 18px;
+            background-color: white;
+            color: slateblue;
+            box-shadow: 0px 1px 0.5px rgba(128, 128, 128, 0.911);
+        }
+
+        #perNa2 {
+            height: 40px;
+        }
+
+        button {
+            margin: 20px;
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            border-radius: 50px;
+            border: solid 2px lightgray;
+            color: #F7F7F7;
+            font-weight: 500;
+            transition: 0.4s;
+        }
+
+        button:hover {
+            box-shadow: gray 0px 1px 4px;
+        }
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Roboto, sans-serif;
+            font-weight: 300;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            width: 100%;
+            height: 60px;
+            background-color: #145896;
+            overflow: hidden;
+        }
+
+        .menu {
+            color: #F7F7F7;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: Roboto, sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 45px;
+            margin-top: 8px;
+            margin-left: 30px;
+        }
+
+        .navMenu .nav {
+            font-family: Roboto, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 27px;
+            margin: auto 0;
+            color: #F7F7F7;
+            padding-right: 20px;
+            text-decoration: none;
+        }
+
+        .navMenu {
+            display: flex;
+            flex-direction: row;
+            margin-top: 10px;
+        }
+
+        @media only screen and (max-width: 600px) {
+            header {
+                flex-wrap: wrap;
+                justify-content: space-between;
+                transition: height 0.3s;
+            }
+
+            header:focus-within,
+            header:hover {
+                height: 170px;
+            }
+
+            .navMenu {
+                flex-direction: column;
+                flex-basis: 100%;
+            }
+
+            .menu {
+                flex-direction: column;
+            }
+
+            .logo {
+                flex-basis: 100%;
+            }
+
+            .navMenu .nav {
+                width: 100%;
+                flex-basis: 100%;
+                font-size: 160%;
+                margin: 0;
+                text-align: center;
+                display: inline-block;
+                padding-right: 0;
+                min-height: 35px;
+            }
+        }
+    </style>
+    <script>
+        var data;
+        var tokens;
+
+        const url = "/api";
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({ "login": "api", "password": "T5rEZQ5Q" });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        var request = JSON.parse(localStorage.getItem('request'));
+        var request2 = JSON.parse(localStorage.getItem('request2'));
+
+
+        document.getElementById('otd').innerHTML = request.from;
+        document.getElementById('otdSkol').innerHTML = request.howMFrom;
+
+        document.getElementById('otd2').innerHTML = request.from;
+        document.getElementById('otdSkol2').innerHTML = request.howMFrom;
+
+        document.getElementById('pol').innerHTML = request.to;
+        document.getElementById('polSkol').innerHTML = request.howMTo;
+
+        document.getElementById('wall').innerHTML = request.wallet;
+
+        //document.getElementById('perNa').innerHTML = request2.wallet2;
+        document.getElementById('perNa2').innerHTML = request.wallet2;
+
+        async function loginAPI() {
+            await fetch(url + "/signin", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log('API logged in');
+                    tokens = result.tokens;
+                }
+                )
+                .catch(error => console.log('error', error));
+        }
+
+        async function getAllCurrencies() {
+            await loginAPI();
+            await fetch(url + '/getAllCurrencies',
+                {
+                    method: 'POST',
+                    headers: myHeaders,
+                    redirect: 'follow',
+                    body: JSON.stringify({ tokens })
+                }
+            ).then(res => res.json())
+                .then((response) => {
+                    data = response.data;
+                    tokens = response.tokens;
+                });
+            viewCurrency("Bitcoin");
+        }
+        async function getPost() {
+            await loginAPI();
+            var request = localStorage.getItem('request');
+            request.tokens = tokens;
+            fetch(url + '/addTransaction', {
+                method: 'POST',
+                headers: myHeaders,
+                body: request
+            })
+                .then(res => res.json())
+                .then((response) => {
+                    console.log(response);
+                    if (response.ok === true) {
+                        alert('Спасибо! Ваша заявка будет обработана в ближайшее время.');
+                        window.location = 'index.html';
+                    }
+                }).catch(response => {
+                    alert("Произошла ошибка! Попробуйте позже.");
+                });
+        }
+        function copyText(id) {
+            /* Get the text field */
+            var copyText = document.getElementById(id);
+
+            /* Select the text field */
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+            /* Copy the text inside the text field */
+            document.execCommand("copy");
+
+            /* Alert the copied text */
+            //alert("Copied the text: " + copyText.value);
+        }
+    </script>
+</body>
+
+</html>
