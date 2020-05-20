@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <title>YoLoChange24</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/coin/bitcoinICON.ico" type="image/x-icon">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="css/ico-font.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body onclick>
+    <header ontouchmove>
+        <div class="wrapper">
+            <header class="header">
+                <div class="container">
+                    <div class="header__row">
+                        <div class="header__title">BizChange24</div>
+                        <div class="header__burger">
+                            <span></span>
+                        </div>
+                        <nav class="header__menu">
+                            <ul class="menu__list">
+                                <li class="menu__item"><a href="index.html" class="menu__link">Обмен</a></li>
+                                <li class="menu__item"><a href="rez.html" class="menu__link">Резервы</a></li>
+                                <li class="menu__item"><a href="kon.html" class="menu__link">Контакты</a></li>
+                                <li class="menu__item"><a href="#" class="menu__link">Наши правила</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+    </header>
+    <div>
+        <h1 class="nazvBlock"><span class="red">Резервы</span> нашего обменника</h1>
+        <div class="rezBlock">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        var data;
+        var tokens;
+
+        const url = "/api";
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({ "login": "api", "password": "T5rEZQ5Q" });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        async function loginAPI() {
+            await fetch(url + "/signin", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log('API logged in');
+                    tokens = result.tokens;
+                }
+                )
+                .catch(error => console.log('error', error));
+        }
+
+        async function getAllCurrencies() {
+            await loginAPI();
+            await fetch(url + '/getAllCurrencies',
+                {
+                    method: 'POST',
+                    headers: myHeaders,
+                    redirect: 'follow',
+                    body: JSON.stringify({ tokens })
+                }
+            ).then(res => res.json())
+                .then((response) => {
+                    data = response.data;
+                    tokens = response.tokens;
+                    data.forEach(element => {
+                        if (document.getElementById(element.currencyCode))
+                            document.getElementById(element.currencyCode).innerHTML = element.reserve + document.getElementById(element.currencyCode).innerHTML.substring(3);
+                    });
+                });
+        }
+        getAllCurrencies();
+    </script>
+</body>
+
+</html>

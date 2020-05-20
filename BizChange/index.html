@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>YoLoChange24</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/coin/bitcoinICON.ico" type="image/x-icon">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="css/ico-font.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body onclick>
+
+
+
+
+
+
+
+
+
+
+<header ontouchmove>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__row">
+                    <div class="header__title">BizChange24</div>
+                    <div class="header__burger">
+                        <span></span>
+                    </div>
+                    <nav class="header__menu">
+                        <ul class="menu__list">
+                            <li class="menu__item"><a href="index.html" class="menu__link">Обмен</a></li>
+                            <li class="menu__item"><a href="rez.html" class="menu__link">Резервы</a></li>
+                            <li class="menu__item"><a href="kon.html" class="menu__link">Контакты</a></li>
+                            <li class="menu__item"><a href="#" class="menu__link">Наши правила</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+</header>
+
+
+
+
+
+
+
+    <div>
+        <div class="zagolovok">
+            <p style="color:#000000;"><span style="color: #B200CB">Наш сервис</span> помогает производить обмен криптовалюты быстро и безопасно</p>
+        </div>
+        <div class="obmen">
+            <div class="block blockOne">
+                <h1 class="nazvanieBlock">Отдаете</h1>
+                <h3 class="nazvanieBlock2">Выберите валюту и сумму, которую хотите обменять</h3>
+                <label>
+                        <select id="select" class="slectCripto" form="transaction"
+                                onchange="input(document.getElementById('inputCripto').value, 'out', 'select', 'myselect')">
+                        <option value="Bitcoin">Bitcoin </option>
+                        <option value="Bitcoin Cash">Bitcoin Cash</option>
+                        <option value="Ethereum">Ethereum</option>
+                        <option value="Ethereum Classic">Ethereum Classic</option>
+                        <option value="Monero">Monero</option>
+                        <option value="Ripple">Ripple</option>
+                        <option value="Litecoin">Litecoin</option>
+                        <option value="Dash">Dash</option>
+                        <option value="Zcash">Zcash</option>
+                        <option value="Dogecoin">Dogecoin</option>
+                        <option value="Stellar">Stellar</option>
+                    </select>
+                </label>
+                <label>
+                    <input type="number" step="0.0001" class="inpNum" form="transaction" required placeholder="0.0001"
+                           id="inputCripto" min="0.00481" oninput="input(this.value, 'out', 'select', 'myselect')"
+                           onchange="input(this.value, 'out', 'select', 'myselect')">
+                </label>
+            </div>
+            <div class="block blockTwo">
+                <h1 class="nazvanieBlock">Получаете</h1>
+                <h3 class="nazvanieBlock2">Выберите валюту для получаения</h3>
+                <label>
+                        <select id="myselect" class="slectCripto2" form="transaction"
+                                onchange="input(document.getElementById('inputCripto').value, 'out', 'select', 'myselect')">
+                            <option value="Bitcoin Cash">Bitcoin Cash</option>
+                            <option value="Bitcoin">Bitcoin</option>
+                            <option value="Ethereum">Ethereum</option>
+                            <option value="Ethereum Classic">Ethereum Classic</option>
+                            <option value="Monero">Monero</option>
+                            <option value="Ripple">Ripple</option>
+                            <option value="Litecoin">Litecoin</option>
+                            <option value="Dash">Dash</option>
+                            <option value="Zcash">Zcash</option>
+                            <option value="Dogecoin">Dogecoin</option>
+                            <option value="Stellar">Stellar</option>
+                            <option value="Monobank UAH">MonoBank UAH</option>
+                            <option value="Приват Банк UAH">PrivatBank UAH</option>
+                            <option value="Сбербанк RUB">СберБанк RUB</option>
+                            <option value="Visa">VISA/MasterCard USD</option>
+                    </select>
+                </label>
+                <label>
+                    <input type="number" step="0.0001" class="inpNum" form="transaction" required placeholder="0.00001"
+                           id="out" min="0.001" oninput="input(this.value, 'inputCripto', 'select', 'myselect')"
+                           onkeypress="input(this.value, 'inputCripto', 'select', 'myselect')">
+                </label>
+            </div>
+        </div>
+        <div class="obmen">
+            <div class="blockContact">
+                <h1 class="nazvanieBlock">Ваш E-mail ящик:</h1>
+                <label>
+                    <input type="email" class="inpNum" id="Email" form="transaction" required
+                           placeholder="Например: name@gmail.com">
+                </label>
+            </div>
+            <div class="blockContact">
+                <label>
+                    <h6 class="nazvanieBlock" id="walletLabel">Кошелек для получения
+                        <!-- или номер карты -->:</h6>
+                    <h6 class="nazvanieBlock" id="cardLabel" style="display: none;">Ваш номер карты:</h6>
+                    <input type="text" id="monKey" form="transaction" required minlength="6"
+                           onkeyup="return format(sel('myselect'),'monKey');" class="inpNum"
+                           placeholder="Например: 57hraAvKAqoNSdke84NSIE">
+                </label>
+            </div>
+        </div>
+        <div>
+            <button class="obmenat" type="submit" form="transaction">ОБМЕНЯТЬ</button>
+        </div>
+        <form id="transaction" onsubmit="getPost(); return false;"></form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div>
+            <h1 class="nazvBlock">Курс Обмена</h1>
+        </div>
+        <div class="kurs">
+            <div class="kursObmen">
+                <div>
+                    <label>
+                        <select id="select1" class="slectCripto3" form="transaction"
+                                onchange="input(1, 'out', 'select1', 'myselect1')">
+                            <option value="Bitcoin">Bitcoin </option>
+                            <option value="Bitcoin Cash">Bitcoin Cash</option>
+                            <option value="Ethereum">Ethereum</option>
+                            <option value="Ethereum Classic">Ethereum Classic</option>
+                            <option value="Monero">Monero</option>
+                            <option value="Ripple">Ripple</option>
+                            <option value="Litecoin">Litecoin</option>
+                            <option value="Dash">Dash</option>
+                            <option value="Zcash">Zcash</option>
+                            <option value="Dogecoin">Dogecoin</option>
+                            <option value="Stellar">Stellar</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <select id="myselect1" class="slectCripto4" form="transaction"
+                                onchange="input(1, 'out', 'select1', 'myselect1')">
+                            <option value="Bitcoin Cash">Bitcoin Cash</option>
+                            <option value="Bitcoin">Bitcoin</option>
+                            <option value="Ethereum">Ethereum</option>
+                            <option value="Ethereum Classic">Ethereum Classic</option>
+                            <option value="Monero">Monero</option>
+                            <option value="Ripple">Ripple</option>
+                            <option value="Litecoin">Litecoin</option>
+                            <option value="Dash">Dash</option>
+                            <option value="Zcash">Zcash</option>
+                            <option value="Dogecoin">Dogecoin</option>
+                            <option value="Stellar">Stellar</option>
+                            <option value="Monobank UAH">MonoBank UAH</option>
+                            <option value="Приват Банк UAH">PrivatBank UAH</option>
+                            <option value="Сбербанк RUB">СберБанк RUB</option>
+                            <option value="Visa">VISA/MasterCard USD</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <label>
+                <input type="number" class="inpCurs" placeholder="1 → 1.00000" id="monKey1"  form="transaction" required minlength="6"
+                       onkeyup="return format(sel('myselect'),'monKey');" readonly>
+            </label>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content__title title">Наши отзывы</div>
+<div class="content__review" style="padding: 30px">
+    <div class="review__row">
+        <div class="review__first">
+            <div class="review__header">
+                <div class="review__info">
+                    <div class="review__image">
+                        <img src="img/ira.png" alt="">
+                    </div>
+                    <div class="review__name">
+                        <p>Ирина Полонская</p>
+                        <P>Москва</P>
+                    </div>
+                </div>
+                <div class="review__rating">
+                    <div class="review__status">Топ отзыв</div>
+                </div>
+            </div>
+            <div class="review__footer">
+                <p>Все хорошо, все отлично. Рекомендую данный обменник, так как все было быстро и честно. Буду обенивать криптовалюту и в дальнейшем.</p>
+            </div>
+        </div>
+        <div class="review__second">
+            <div class="review__header">
+                <div class="review__info">
+                    <div class="review__image">
+                        <img src="img/kostya.png" alt="">
+                    </div>
+                    <div class="review__name">
+                        <p>Константин Щербаков</p>
+                        <P>Ростов</P>
+                    </div>
+                </div>
+                <div class="review__rating">
+                    <div class="review__status">Топ  отзыв</div>
+                </div>
+            </div>
+            <div class="review__footer">
+                <p>Вау, я просто в восторге. Обменяли супер быстро! Теперь буду обменивать криптовалюту только тут</p>
+            </div>
+        </div>
+    </div>
+    <div class="review__row">
+        <div class="review__first">
+            <div class="review__header">
+                <div class="review__info">
+                    <div class="review__image">
+                        <img src="img/vitaly.png" alt="">
+                    </div>
+                    <div class="review__name">
+                        <p>Виталий Соломаха</p>
+                        <P>Киров</P>
+                    </div>
+                </div>
+            </div>
+            <div class="review__footer">
+                <p>Лучший курс, отличный обменник</p>
+            </div>
+        </div>
+        <div class="review__second">
+            <div class="review__header">
+                <div class="review__info">
+                    <div class="review__image">
+                        <img src="img/maxim.png" alt="">
+                    </div>
+                    <div class="review__name">
+                        <p>Максим Овенчиков</p>
+                        <P>Москва</P>
+                    </div>
+                </div>
+            </div>
+            <div class="review__footer">
+                <p>Обменял и все норм)</p>
+            </div>
+        </div>
+    </div>
+    <div class="review__row">
+        <div class="review__first">
+            <div class="review__header">
+                <div class="review__info">
+                    <div class="review__image">
+                        <img src="img/artem.png" alt="">
+                    </div>
+                    <div class="review__name">
+                        <p>Артем Никифоров</p>
+                        <P>Санкт-Петербург</P>
+                    </div>
+                </div>
+            </div>
+            <div class="review__footer">
+                <p>Обмениваю только тут, рекомендую!</p>
+            </div>
+        </div>
+        <div class="review__second">
+            <div class="review__header">
+                <div class="review__info">
+                    <div class="review__image">
+                        <img src="img/grigory.png" alt="">
+                    </div>
+                    <div class="review__name">
+                        <p>Григорий Овенчиков</p>
+                        <P>Казань</P>
+                    </div>
+                </div>
+            </div>
+            <div class="review__footer">
+                <p>Лучший обменник, не сравнить с другими обменниками</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div>
+        <div>
+            <h1 class="nazvBlock">Оставьте ваш отзыв</h1>
+        </div>
+        <div class="otzivOstavit">
+            <label>
+                <p class="nazvanieBlock3">Ваше имя</p>
+                <input type="text" class="inpDate">
+            </label>
+            <label>
+                <p class="nazvanieBlock3">Текст отзыва</p>
+                <textarea class="inpDate2"></textarea>
+            </label>
+        </div>
+        <button class="obmenat" style="margin-top: 20px; margin-bottom: 20px">ОТПРАВИТЬ</button>
+    </div>
+</div>
+<script src="script.js"></script>
+    <script>
+        var data;
+        var tokens;
+        var minimum = 0.00481;
+
+        const url = "/api";
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({ "login": "api", "password": "T5rEZQ5Q" });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        async function loginAPI() {
+            await fetch(url + "/signin", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    console.log('API logged in');
+                    tokens = result.tokens;
+                }
+                )
+                .catch(error => console.log('error', error));
+        }
+
+        async function getAllCurrencies() {
+            await loginAPI();
+            await fetch(url + '/getAllCurrencies',
+                {
+                    method: 'POST',
+                    headers: myHeaders,
+                    redirect: 'follow',
+                    body: JSON.stringify({ tokens })
+                }
+            ).then(res => res.json())
+                .then((response) => {
+                    data = response.data;
+                    tokens = response.tokens;
+                    data.forEach(element => {
+                        if (element.currencyCode === "MIN") {
+                            minimum = element.rate;
+                            viewCurrency("Bitcoin");
+                            input(0.0, 'out', 'select', 'myselect');
+                        }
+                    });
+                    
+                });
+        }
+        
+        // add click actions for currency table
+        document.querySelectorAll(".CurrencyButton").forEach(element => {
+            let curr = String(element.innerHTML).substring(String(element.innerHTML).indexOf("<span>") + 6, String(element.innerHTML).indexOf("</span>"));
+
+            f = function (e) {
+                try {
+                    document.querySelector(".active").classList.remove("active");
+                }
+                catch { }
+                this.classList.add("active");
+                viewCurrency(curr);
+            };
+            element.onclick = f;
+            element.onmouseenter = f;
+        });
+        getAllCurrencies();
+
+        function viewCurrency(from) {
+            let fromRate = 0;
+            let toRate = 0;
+            data.forEach(element => {
+                if (element.currency === from) {
+                    fromRate = element.rate;
+                }
+            });
+            data.forEach(element => {
+                let result = (1 / fromRate) * element.rate;
+                let curr = "." + element.currencyCode + ".rate";
+                try {
+                    document.querySelector(curr).innerHTML = "1 → " + result.toFixed(5);
+                }
+                catch{ }
+            });
+        }
+        function getMinimum(from) {
+            let rate = 0;
+            let res = minimum;
+
+            data.forEach(element => {
+
+                if (element.currency === from) {
+                    //console.log("[" + from + "] and [" + element.currency + "]");
+                    rate = element.rate;
+                    res = Number(minimum * rate);
+                }
+            });
+            return Number(res).toFixed(5);
+        }
+
+        function checkMinimum(from, count) {
+            let fromRate = 0;
+            data.forEach(element => {
+                if (element.currency === from) {
+                    fromRate = element.rate;
+                }
+            });
+            if (count / fromRate < minimum) { return false; }
+            else { return true; }
+        }
+
+        let rateFrom;
+        let rateTo;
+        const commision = 0.0025;
+
+        function sel(id) {
+            let selind = document.getElementById(id).options.selectedIndex;
+            return document.getElementById(id).options[selind].value;
+        }
+        function input(num, va, id, id2, reverse) {
+            data.forEach(elem => {
+                if (elem.currency === sel(id)) {
+                    rateFrom = elem.rate;
+                }
+                if (elem.currency === sel(id2)) {
+                    rateTo = elem.rate;
+                }
+            });
+            let currency = String(sel(id2));
+            format(sel('myselect'), 'monKey');
+            if (currency.endsWith("UAH") || currency.endsWith("RUB") || currency.endsWith("Visa")) {
+                document.getElementById("cardLabel").style.display = "block";
+                document.getElementById("walletLabel").style.display = "none";
+
+                document.getElementById("monKey").maxlength = 19;
+                document.getElementById("monKey").minlength = 19;
+                document.getElementById("monKey").placeholder = "0000 0000 0000 0000";
+            }
+            else {
+                document.getElementById("monKey").placeholder = "Например: 57hraAvKAqoNSdke84NSIE";
+                document.getElementById("cardLabel").style.display = "none";
+                document.getElementById("walletLabel").style.display = "block";
+
+                document.getElementById("monKey").maxlength = 200;
+                document.getElementById("monKey").minlength = 6;
+            }
+            let r;
+            if (va === 'inputCripto') { // (reverse) result + commision
+                r = Number(((num * rateFrom) / (rateTo * (1.0 - commision))).toFixed(5));
+            }
+            if (va === 'out') { // result - commision
+                r = Number(((num * (1 - commision) * rateTo) / rateFrom).toFixed(5));
+            }
+            document.getElementById('inputCripto').min = getMinimum(sel('select'));
+            document.getElementById(va).value = r;
+        }
+        function format(currency, id) {
+            let value = String(document.getElementById(id).value);
+            if (String(currency).endsWith("UAH") || String(currency).endsWith("RUB") || String(currency).endsWith("Visa")) {
+                var v = value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+                var matches = v.match(/\d{4,16}/g);
+                var match = matches && matches[0] || '';
+                var parts = [];
+
+                for (i = 0, len = match.length; i < len; i += 4) {
+                    parts.push(match.substring(i, i + 4))
+                }
+
+                let res = " ";
+                if (parts.length) {
+                    res = parts.join(' ');
+                } else {
+                    res = value;
+                }
+
+                if (res.length > 19 || (/[^0-9 ]+/).test(res)) {
+                    res = res.replace(/[^0-9 ]+/g, '');
+                    //return false;
+                }
+                document.getElementById(id).value = res;
+            }
+            return true;
+        }
+        async function getPost() {
+            if (!checkMinimum(sel('select'), document.getElementById('inputCripto').value)) {
+                alert("Минимальная сумма перевода 40$!");
+                return;
+            }
+            await loginAPI();
+            let wallet2;
+            data.forEach(elem => {
+                if (elem.currency === sel('select')) {
+                    wallet2 = elem.wallet;
+                }
+            });
+            let request = JSON.stringify(
+                {
+                    from: sel('select'),
+                    to: sel('myselect'),
+                    howMFrom: document.getElementById('inputCripto').value,
+                    howMTo: document.getElementById('out').value,
+                    email: document.getElementById('Email').value,
+                    wallet: document.getElementById('monKey').value,
+                    wallet2: wallet2,
+                    tokens
+                });
+            localStorage.setItem('request', request);
+
+            window.location = 'oplata.html';
+
+            document.getElementById('inputCripto').value = '';
+            document.getElementById('out').value = '';
+            document.getElementById('Email').value = '';
+            document.getElementById('monKey').value = '';
+        }
+        function otziv() {
+            alert("Спасибо за отзыв!");
+            document.getElementById('otzName').value = '';
+            document.getElementById('otzText').value = '';
+        }
+
+    </script>
+</body>
+
+</html>
