@@ -5,21 +5,37 @@
     <meta charset="UTF-8">
     <title>YoLoChange24</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="shortcut icon" href="./coin/bitcoinICON.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/coin/bitcoinICON.ico" type="image/x-icon">
     <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="css/ico-font.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 </head>
 
 <body onclick>
-    <header  ontouchmove>
-        <div class="menu">
-            <span class="logo">YoLoChange24</span>
-            <div class="navMenu">
-                <a href="index.html" class="nav">Обмен</a>
-                <a href="rez.html" class="nav">Резервы</a>
-                <a href="kon.html" class="nav">Контакты</a>
+<header ontouchmove>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__row">
+                    <div class="header__title">BizChange24</div>
+                    <div class="header__burger">
+                        <span></span>
+                    </div>
+                    <nav class="header__menu">
+                        <ul class="menu__list">
+                            <li class="menu__item"><a href="index.html" class="menu__link">Обмен</a></li>
+                            <li class="menu__item"><a href="rez.html" class="menu__link">Резервы</a></li>
+                            <li class="menu__item"><a href="kon.html" class="menu__link">Контакты</a></li>
+                            <li class="menu__item"><a href="rusel.html" class="menu__link">Наши правила</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+    </div>
+</header>
     <div style="max-width: 500px; margin: 0 auto; margin-top: 30px; padding: 16px" class="box" id="confirmBox">
         <h1 style="text-align: center; margin-top: 20px; font-weight: bold">Заявка</h1>
         <h4 style="text-align: center; margin-top: 10px; font-weight: normal">Пожалуйста, проверьте введенные Вами
@@ -184,96 +200,7 @@
         }
 
 
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: Roboto, sans-serif;
-            font-weight: 300;
-        }
 
-        * {
-            padding: 0;
-            margin: 0;
-        }
-
-        header {
-            width: 100%;
-            height: 60px;
-            background-color: #145896;
-            overflow: hidden;
-        }
-
-        .menu {
-            color: #F7F7F7;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-family: Roboto, sans-serif;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 28px;
-            line-height: 45px;
-            margin-top: 8px;
-            margin-left: 30px;
-        }
-
-        .navMenu .nav {
-            font-family: Roboto, sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 18px;
-            line-height: 27px;
-            margin: auto 0;
-            color: #F7F7F7;
-            padding-right: 20px;
-            text-decoration: none;
-        }
-
-        .navMenu {
-            display: flex;
-            flex-direction: row;
-            margin-top: 10px;
-        }
-
-        @media only screen and (max-width: 600px) {
-            header {
-                flex-wrap: wrap;
-                justify-content: space-between;
-                transition: height 0.3s;
-            }
-
-            header:focus-within,
-            header:hover {
-                height: 170px;
-            }
-
-            .navMenu {
-                flex-direction: column;
-                flex-basis: 100%;
-            }
-
-            .menu {
-                flex-direction: column;
-            }
-
-            .logo {
-                flex-basis: 100%;
-            }
-
-            .navMenu .nav {
-                width: 100%;
-                flex-basis: 100%;
-                font-size: 160%;
-                margin: 0;
-                text-align: center;
-                display: inline-block;
-                padding-right: 0;
-                min-height: 35px;
-            }
-        }
     </style>
     <script>
         var data;

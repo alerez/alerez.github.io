@@ -28,6 +28,11 @@ $wit: #FFFFFF;
   line-height: $height;
 }
 
+.konText{
+  margin-left: -55px;
+  margin-top: 15px;
+}
+
 .zagolovok{
   @include font($got, normal, bold, 42px, 69px);
 
@@ -243,7 +248,7 @@ $wit: #FFFFFF;
 }
 
 .otzivOstavit{
-  @include blockBox(500px, 320px);
+  @include blockBox(500px, 340px);
   margin: 0 auto;
   padding-top: 10px;
 }
@@ -594,9 +599,17 @@ $red: #B200CB;
   text-align: center;
   color: #111111;
 }
-.rezBlock{
-  @include blockBox(480px, 450px);
-  margin: 0 auto;
+.rezBlock2{
+  @include blockBox(480px, 850px);
+  @include font($got, normal, 500, 16px, 187.2%);
+  padding: 30px 30px 30px 60px;
+  margin: 0 auto 70px;
+}
+.rezBlock3{
+  @include blockBox(480px, 750px);
+  @include font($got, normal, 500, 16px, 187.2%);
+  padding: 30px 30px 30px 60px;
+  margin: 0 auto 70px;
 }
 
 
@@ -1025,6 +1038,95 @@ $red: #B200CB;
 
 
 
+
+
+
+$got: Gotham Pro, sans-serif;
+$gradientBlue: linear-gradient(90deg, #6757FF 25.83%, #3D9CFF 79.13%);
+$gradientRed: linear-gradient(90deg, #AB00C4 25.83%, #E600C9 79.13%);
+$wit: #FFFFFF;
+$red: #B200CB;
+
+@mixin size($width, $height){
+  width: $width;
+  height: $height;
+}
+@mixin blockBox($width, $height){
+  background: $wit;
+  box-shadow: -20px 4px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+  @include size($width, $height)
+}
+@mixin center($type){
+  display: flex;
+  text-align: $type;
+  justify-items: $type;
+  justify-content: $type;
+  justify-self: $type;
+}
+@mixin font($type, $style, $weight, $size, $height){
+  font-family: $type;
+  font-style: $style;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+}
+.red{
+  color: $red;
+}
+.nazvBlock{
+  @include font($got, normal, bold, 38px, 69px);
+
+  margin-top: 38px;
+  margin-bottom: 48px;
+
+  text-align: center;
+  color: #111111;
+}
+.rezBlock{
+  @include blockBox(480px, 6900px);
+  @include font($got, normal, 500, 16px, 187.2%);
+  padding: 30px 30px 30px 60px;
+  margin: 0 auto 70px;
+}
+.p{
+  padding-top: 20px;
+  color: #cacdcc;
+}
+h3{
+  padding-top: 20px;
+  color: #272727;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 920px) {
 .kurs{
  flex-direction: column;
@@ -1050,6 +1152,7 @@ flex-direction: column;
   }
   .otzivOstavit{
     max-width: 280px;
+    height: 400px;
   }
   .inpDate{
     @include size(240px, 28px);
@@ -1095,6 +1198,25 @@ flex-direction: column;
   }
   .nazvanieBlock2{
     margin-left: 38px;
+  }
+  .rezBlock2{
+    @include blockBox(320px, 850px);
+    @include font($got, normal, 500, 16px, 187.2%);
+    padding: 10px 10px 10px 20px;
+    margin: 0 auto 70px;
+  }
+  .rezBlock3{
+    @include blockBox(320px, 790px);
+    @include font($got, normal, 500, 16px, 187.2%);
+    padding: 10px 10px 10px 20px;
+    margin: 0 auto 70px;
+  }
+  .konText{
+    margin-left: -35px;
+    margin-top: 15px;
+  }
+  .classTextkon{
+    margin-left: 15px;
   }
 }
 

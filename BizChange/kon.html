@@ -3,110 +3,154 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>YoLoChange24</title>
-    <link rel="shortcut icon" href="./coin/bitcoinICON.ico" type="image/x-icon">
     <meta http-equiv="Cache-Control" content="no-cache">
+    <title>YoLoChange24</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/coin/bitcoinICON.ico" type="image/x-icon">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="css/ico-font.css" media="all" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 </head>
 
 <body onclick>
-    <header ontouchmove>
-        <div class="wrapper">
-            <header class="header">
-                <div class="container">
-                    <div class="header__row">
-                        <div class="header__title">BizChange24</div>
-                        <div class="header__burger">
-                            <span></span>
-                        </div>
-                        <nav class="header__menu">
-                            <ul class="menu__list">
-                                <li class="menu__item"><a href="index.html" class="menu__link">Обмен</a></li>
-                                <li class="menu__item"><a href="rez.html" class="menu__link">Резервы</a></li>
-                                <li class="menu__item"><a href="kon.html" class="menu__link">Контакты</a></li>
-                                <li class="menu__item"><a href="#" class="menu__link">Наши правила</a></li>
-                            </ul>
-                        </nav>
+<header ontouchmove>
+    <div class="wrapper">
+        <header class="header">
+            <div class="container">
+                <div class="header__row">
+                    <div class="header__title">BizChange24</div>
+                    <div class="header__burger">
+                        <span></span>
                     </div>
+                    <nav class="header__menu">
+                        <ul class="menu__list">
+                            <li class="menu__item"><a href="index.html" class="menu__link">Обмен</a></li>
+                            <li class="menu__item"><a href="rez.html" class="menu__link">Резервы</a></li>
+                            <li class="menu__item"><a href="kon.html" class="menu__link">Контакты</a></li>
+                            <li class="menu__item"><a href="rusel.html" class="menu__link">Наши правила</a></li>
+                        </ul>
+                    </nav>
                 </div>
-            </header>
+            </div>
+        </header>
+    </div>
+</header>
+<div>
+    <h1 class="nazvBlock"><span class="red">Обратная </span>связь</h1>
+</div>
+<div class="rezBlock3">
+    <div style="margin-top: 20px">
+        <p>Если у вас возникли какие-либо вопросы, или вы хотите что-нибудь нам сообщить - пожалуйста, обратитесь по одному из указанных ниже контактов.</p>
+    </div>
+    <div style="display: flex; margin-top: 15px">
+        <img src="./img/gmail.png" style="width: 35px; height: 35px">
+        <p style="margin-top: 3px; margin-left: 5px">BizChange24@gmail.com</p>
+    </div>
+    <div style="display: flex; margin-top: 5px">
+        <img src="./img/telegram.png" style="width: 35px; height: 35px">
+        <p style="margin-top: 3px; margin-left: 5px">t.me/BizChange24</p>
+    </div>
+    <div style="margin-top: 15px">
+        <p>Или воспользуйтесь нашей формой обратной связи. Мы обязательно свяжемся с вами в самое ближайшее время.</p>
+    </div>
+    <div class="konText">
+        <div>
+            <label>
+                <p class="nazvanieBlock3 classTextkon">Ваше имя</p>
+                <input class="formSize formInp ret inpDate" required type="email" id="fromEmail" form="feedback" placeholder="Напишите свое имя">
+            </label>
+            <label>
+                <p class="nazvanieBlock3 classTextkon">Тема сообщения</p>
+                <input class="formSize formInp ret inpDate" required type="text" id="fromSubject" form="feedback" placeholder="Напишите тему">
+            </label>
         </div>
-    </header>
+        <div>
+            <label>
+                <p class="nazvanieBlock3 classTextkon">Текст обращения</p>
+                <textarea class="inpDate2" required name="text" id="fromText" form="feedback" placeholder="Напишите ваш текст"></textarea>
+            </label>
+        </div>
+    </div>
+</div>
+<input class="formButton formSize ret obmenat" form="feedback" type="submit" style="margin-top: 20px; margin-bottom: 20px">
+<form id="feedback" onsubmit="getPost(); return false;"></form>
 
 
 
 
     </div>
     <script src="script.js"></script>
-    <script>
-        const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
+<script>
+	const myHeaders = new Headers();
+	myHeaders.append("Content-Type", "application/json");
 
-        const raw = JSON.stringify({ "login": "api", "password": "T5rEZQ5Q" });
+	const raw = JSON.stringify({ "login": "api", "password": "T5rEZQ5Q" });
 
-        const requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-        const url = "/api";
+	const requestOptions = {
+		method: 'POST',
+		headers: myHeaders,
+		body: raw,
+		redirect: 'follow'
+	};
+	const url = "/api";
 
-        var tokens;
+	var tokens;
 
-        async function loginAPI() {
-            await fetch(url + "/signin", requestOptions)
-                .then(response => response.json())
-                .then(result => {
-                    console.log('API logged in');
-                    tokens = result.tokens;
-                }
-                )
-                .catch(error => console.log('error', error));
-        }
-        async function getAllCurrencies() {
-            await loginAPI();
-            await fetch(url + '/getAllCurrencies',
-                {
-                    method: 'POST',
-                    headers: myHeaders,
-                    redirect: 'follow',
-                    body: JSON.stringify({ tokens })
-                }
-            ).then(res => res.json())
-                .then((response) => {
-                    this.data = response.data;
-                    tokens = response.tokens;
-                });
-        }
-        getAllCurrencies();
-        async function getPost() {
-            await loginAPI();
-            let request = JSON.stringify({
-                from: document.getElementById('fromEmail').value,
-                subject: document.getElementById('fromSubject').value,
-                body: document.getElementById('fromText').value,
-                tokens,
-            });
-            fetch(url + '/sendMail', {
-                method: 'POST',
-                headers: myHeaders,
-                body: request
-            })
-                .then(res => res.json())
-                .then((response) => {
-                    this.data = response;
-                    tokens = response.tokens;
-                    if (response.ok == true)
-                        alert("Спасибо! В случае необходимости мы напишем вам на " + document.getElementById('fromEmail').value);
-                    else
-                    alert("Произошла ошибка! Попробуйте позже или свяжитесь с нами другим методом.");
-                }).catch(response => {
-                    alert("Произошла ошибка! Попробуйте позже или свяжитесь с нами другим методом.");
-                });
-        }
+	async function loginAPI() {
+		await fetch(url + "/signin", requestOptions)
+			.then(response => response.json())
+			.then(result => {
+					console.log('API logged in');
+					tokens = result.tokens;
+				}
+			)
+			.catch(error => console.log('error', error));
+	}
+	async function getAllCurrencies() {
+		await loginAPI();
+		await fetch(url + '/getAllCurrencies',
+			{
+				method: 'POST',
+				headers: myHeaders,
+				redirect: 'follow',
+				body: JSON.stringify({ tokens })
+			}
+		).then(res => res.json())
+			.then((response) => {
+				this.data = response.data;
+				tokens = response.tokens;
+			});
+	}
+	getAllCurrencies();
+	async function getPost() {
+		await loginAPI();
+		let request = JSON.stringify({
+			from: document.getElementById('fromEmail').value,
+			subject: document.getElementById('fromSubject').value,
+			body: document.getElementById('fromText').value,
+			tokens,
+		});
+		fetch(url + '/sendMail', {
+			method: 'POST',
+			headers: myHeaders,
+			body: request
+		})
+			.then(res => res.json())
+			.then((response) => {
+				this.data = response;
+				tokens = response.tokens;
+				if (response.ok == true)
+					alert("Спасибо! В случае необходимости мы напишем вам на " + document.getElementById('fromEmail').value);
+				else
+					alert("Произошла ошибка! Попробуйте позже или свяжитесь с нами другим методом.");
+			}).catch(response => {
+			alert("Произошла ошибка! Попробуйте позже или свяжитесь с нами другим методом.");
+		});
+	}
 
-    </script>
+</script>
 </body>
 
 </html>
