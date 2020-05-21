@@ -1336,26 +1336,32 @@ h3 {
   }
 
   .slectCripto {
-    width: 275px;
+    width: 255px;
     height: 48px;
+    margin: 10px;
+    float: left;
   }
 
   .slectCripto2 {
-    width: 275px;
+    width: 255px;
     height: 48px;
+    margin: 10px;
+    float: left;
   }
 
   .inpNum {
-    width: 275px;
+    width: 255px;
     height: 48px;
+    margin: 10px;
+    float: left;
   }
 
   .nazvanieBlock {
-    margin-left: 38px;
+    margin-left: -40px;
   }
 
   .nazvanieBlock2 {
-    margin-left: 38px;
+    margin-left: -40px;
   }
 
   .rezBlock2 {

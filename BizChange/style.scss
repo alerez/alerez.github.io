@@ -1185,19 +1185,25 @@ flex-direction: column;
     margin-bottom: 3px;
   }
   .slectCripto{
-    @include size(275px, 48px);
+    @include size(255px, 48px);
+    margin: 10px;
+    float: left;
   }
   .slectCripto2{
-    @include size(275px, 48px);
+    @include size(255px, 48px);
+    margin: 10px;
+    float: left;
   }
 .inpNum{
-  @include size(275px, 48px);
+  @include size(255px, 48px);
+  margin: 10px;
+  float: left;
 }
   .nazvanieBlock{
-  margin-left: 38px;
+  margin-left: -40px;
   }
   .nazvanieBlock2{
-    margin-left: 38px;
+    margin-left: -40px;
   }
   .rezBlock2{
     @include blockBox(320px, 850px);
@@ -1218,6 +1224,7 @@ flex-direction: column;
   .classTextkon{
     margin-left: 15px;
   }
+
 }
 
 
