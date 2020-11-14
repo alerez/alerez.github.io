@@ -546,8 +546,49 @@ width:100%;
   width:100%;
 }
 
-
-
+/*Block 8*/
+.block__8__title{
+  width:80%;
+  margin-left:100px;
+  margin-top:80px;
+  margin-bottom:80px;
+}
+.block__8__title > p{
+  color: #000000;
+  font-family: Circe, sans-serif;
+  font-size: 54px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 70px;
+}
+.block__8__images{
+width:80%;
+}
+.block__8__images > img{
+  width:100%;
+  margin-left:100px;
+}
+.block__8__text{
+  margin-left:100px;
+  margin-top:40px;
+  margin-bottom:150px;
+}
+.block__8__text > p{
+  color: #221c19;
+  font-family: "Circe Light",sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 40px;
+}
+.block__8__footer{
+  width:100%;
+}
+.block__8__footer > img{
+  width:100%;
+}
 
 
 
