@@ -51,7 +51,7 @@ button::-moz-focus-inner {
 
 a, a:visited {
   text-decoration: none;
-  color: black;
+  /*color: black*/
 }
 
 a:hover {
@@ -125,6 +125,10 @@ body {
   font-weight: bold;
 }
 
+body a {
+  color: white;
+}
+
 .wrapper {
   min-height: 100vh;
   overflow: hidden;
@@ -181,14 +185,27 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.fullscreen__back-1, .fullscreen__back-2, .fullscreen__back-3, .fullscreen__back-4 {
+.fullscreen__back-sliders {
+  background: white;
+  color: black;
+}
+
+.fullscreen__back-sliders:before {
+  background-color: white;
+}
+
+.fullscreen__back-sliders a {
+  color: black;
+}
+
+.fullscreen__back-1, .fullscreen__back-2, .fullscreen__back-3, .fullscreen__back-4, .fullscreen__back-sliders {
   background-size: cover;
   position: relative;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 
-.fullscreen__back-1:before, .fullscreen__back-2:before, .fullscreen__back-3:before, .fullscreen__back-4:before {
+.fullscreen__back-1:before, .fullscreen__back-2:before, .fullscreen__back-3:before, .fullscreen__back-4:before, .fullscreen__back-sliders:before {
   content: '';
   position: absolute;
   top: 0;
@@ -234,6 +251,13 @@ body {
 .fullscreen__logo .logo__body-transform {
   -webkit-transform: translateY(-265px);
           transform: translateY(-265px);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.fullscreen__logo .logo__body-black-transform {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
@@ -290,10 +314,6 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.fullscreen__header .header__left a, .fullscreen__header .header__rigth a {
-  color: white;
 }
 
 .fullscreen__header .header__socs ul {
@@ -535,6 +555,10 @@ body {
   top: 17px;
 }
 
+.fullscreen__header .header__burger-black:before, .fullscreen__header .header__burger-black:after, .fullscreen__header .header__burger-black span {
+  background: black;
+}
+
 .fullscreen__header .header__burger.--active span {
   display: none;
 }
@@ -552,6 +576,10 @@ body {
 }
 
 .fullscreen__slider {
+  position: relative;
+}
+
+.fullscreen__slider .slider__body {
   margin: 65px 0;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -560,9 +588,7 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
-  position: relative;
   overflow: hidden;
-  width: 100%;
 }
 
 .fullscreen__slider .slider__nav {
@@ -620,7 +646,7 @@ body {
 .fullscreen__slider .slider__arrow-right {
   position: absolute;
   top: 50%;
-  right: 5px;
+  right: -55px;
   width: 55px;
   height: 55px;
   z-index: 50;
@@ -656,7 +682,7 @@ body {
 .fullscreen__slider .slider__arrow-left {
   position: absolute;
   top: 50%;
-  left: 5px;
+  left: -55px;
   width: 55px;
   height: 55px;
   z-index: 50;
@@ -691,6 +717,10 @@ body {
   width: 56px;
 }
 
+.fullscreen__slider .slider__arrow-black:before, .fullscreen__slider .slider__arrow-black:after, .fullscreen__slider .slider__arrow-black span:before {
+  background: black;
+}
+
 .fullscreen__slider .slider__track {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -701,11 +731,29 @@ body {
 
 .fullscreen__slider .slider__block {
   min-height: 400px;
-  min-width: 33.3%;
+  max-width: 1400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.fullscreen__slider .slider__block img {
+  width: 90%;
+  margin: 0 auto;
 }
 
 .fullscreen__slider .slider__block:first-child {
   margin: 0 0 0 85px;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  display: block;
 }
 
 .fullscreen__footer {
@@ -741,7 +789,6 @@ body {
 }
 
 .fullscreen__footer ul li a {
-  color: white;
   font-size: 18px;
 }
 
@@ -867,7 +914,7 @@ body {
   max-width: 1170px;
   width: 100%;
   padding: 0 15px;
-  margin: 140px 0 0 0;
+  margin: 140px 0 0 65px;
 }
 
 .fullscreen .news__body-show {
