@@ -1,0 +1,68 @@
+[
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 10,
+    "description": "Описание для отличных кроссовок",
+    "category": "glasses",
+    "productCode": 10021,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 132,
+    "description": "Описание для отличных кроссовок",
+    "category": "glasses",
+    "productCode": 10022,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 435,
+    "description": "Описание для отличных кроссовок",
+    "category": "glasses",
+    "productCode": 10023,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 435,
+    "description": "Описание для отличных кроссовок",
+    "category": "clock",
+    "productCode": 10024,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 765,
+    "description": "Описание для отличных кроссовок",
+    "category": "clock",
+    "productCode": 10025,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 545,
+    "description": "Описание для отличных кроссовок",
+    "category": "clock",
+    "productCode": 10026,
+    "quantity": 1
+  }
+]

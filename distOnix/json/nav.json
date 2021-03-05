@@ -1,0 +1,27 @@
+{
+  "name": {
+    "footwear": "Обувь",
+    "outerwear": "Верхняя Одежда",
+    "underwear": "Нижнее Белье",
+    "accessories": "Аксесуары"
+  },
+  "catalog":{
+    "footwear": {
+      "sneakers": "Кроссовки",
+      "shoes": "Туфли",
+      "slippers": "Тапочки"
+    },
+    "outerwear": {
+      "sweaters": "Свитера",
+      "shirts": "Рубашки"
+    },
+    "underwear": {
+      "Underpants": "Трусы",
+      "socks": "Носки"
+    },
+    "accessories": {
+      "clock": "Часы",
+      "glasses": "Очки"
+    }
+  }
+}

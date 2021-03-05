@@ -1,0 +1,68 @@
+[
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "sweaters",
+    "productCode": 10009,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "sweaters",
+    "productCode": 10010,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "sweaters",
+    "productCode": 10011,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "shirts",
+    "productCode": 10012,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "shirts",
+    "productCode": 10013,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "shirts",
+    "productCode": 10014,
+    "quantity": 1
+  }
+]

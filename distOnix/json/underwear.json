@@ -1,0 +1,68 @@
+[
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "Underpants",
+    "productCode": 10015,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "Underpants",
+    "productCode": 10016,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "Underpants",
+    "productCode": 10017,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "socks",
+    "productCode": 10018,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "socks",
+    "productCode": 10019,
+    "quantity": 1
+  },
+  {
+    "image": {
+      "img": "dino.jpg"
+    },
+    "titleName": "Кроссовки",
+    "price": 1,
+    "description": "Описание для отличных кроссовок",
+    "category": "socks",
+    "productCode": 10020,
+    "quantity": 1
+  }
+]
